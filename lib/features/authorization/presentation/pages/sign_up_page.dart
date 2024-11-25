@@ -62,6 +62,15 @@ class SignUpPage extends StatelessWidget {
                         const SizedBox(height: 10),
                         FormElementRegionWidget(values: ['asdas','asdsad'], onDateSelected: (String ) {  },),
                         const SizedBox(height: 10),
+                        FormElementNameWidget(
+                          labelText: 'password',
+
+                        ),
+                        const SizedBox(height: 10),
+                        FormElementNameWidget(
+                          labelText: 'confirm password',
+
+                        ),
                       ],
                     ),
                   ),
