@@ -1,0 +1,41 @@
+name: triosoft
+description: "A new Flutter project."
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.3
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  easy_localization: ^3.0.7
+  go_router: ^14.6.1
+  shared_preferences: ^2.3.3
+  flutter_bloc: ^8.1.6
+  freezed_annotation: ^2.4.4
+  freezed: ^2.5.7
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  retrofit_generator: ^8.0.5
+  go_router_builder: 2.7.1
+  build_runner: ^2.4.12
+  json_serializable: ^6.8.0
+  flutter_launcher_icons: ^0.14.0
+  flutter_lints: ^4.0.0
+  get_it: ^8.0.2
+
+flutter:
+  assets:
+    - assets/translations/en.json
+    - assets/translations/hy.json
+    - assets/translations/ru.json
+  uses-material-design: true
+
