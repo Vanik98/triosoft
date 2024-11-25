@@ -82,7 +82,7 @@ extension $SignInRouteExtension on SignInRoute {
 }
 
 RouteBase get $signUpRoute => GoRouteData.$route(
-      path: '/sign-in',
+      path: '/sign-up',
       factory: $SignUpRouteExtension._fromState,
     );
 
@@ -90,7 +90,7 @@ extension $SignUpRouteExtension on SignUpRoute {
   static SignUpRoute _fromState(GoRouterState state) => SignUpRoute();
 
   String get location => GoRouteData.$location(
-        '/sign-in',
+        '/sign-up',
       );
 
   void go(BuildContext context) => context.go(location);

@@ -2,29 +2,19 @@ import 'package:flutter/material.dart';
 
 import '../base/form_text.dart';
 
-class FormElementDescriptionWidget extends StatefulWidget {
+class FormElementEmailWidget extends StatefulWidget {
   final ValueChanged<String?>? onTextChanged;
   final ValueChanged<String?>? onFocusChanged;
   final String? initialValue;
-  final int? maxLines;
-  final int? maxLength;
-  final int? minLength;
+  final String? labelText;
 
-  const FormElementDescriptionWidget({
-    super.key,
-    this.onTextChanged,
-    this.onFocusChanged,
-    this.initialValue,
-    this.maxLines,
-    this.maxLength,
-    this.minLength,
-  });
+  const FormElementEmailWidget({super.key, this.onTextChanged, this.onFocusChanged, this.initialValue, this.labelText});
 
   @override
-  State<FormElementDescriptionWidget> createState() => _FormElementDescriptionWidgetState();
+  State<FormElementEmailWidget> createState() => _FormElementEmailWidgetState();
 }
 
-class _FormElementDescriptionWidgetState extends State<FormElementDescriptionWidget> {
+class _FormElementEmailWidgetState extends State<FormElementEmailWidget> {
   late TextEditingController textEditingController;
 
   @override
@@ -49,16 +39,17 @@ class _FormElementDescriptionWidgetState extends State<FormElementDescriptionWid
   @override
   Widget build(BuildContext context) {
     return FormText(
-      isFixLabel: true,
-      maxLines: widget.maxLines ?? 15,
-      maxLength: widget.maxLength ?? 300,
-      hintText: 'write',
+      hintText: '',
       controller: textEditingController,
-      labelText: 'description',
+      labelText: widget.labelText ?? 'Email',
       onTextChanged: widget.onTextChanged,
       onFocusChanged: widget.onFocusChanged,
       validator: (value) {
-        if (value.length < (widget.minLength ?? 10) || value.length > (widget.maxLength ?? 300)) {
+        if (value == null || value.isEmpty) {
+          return 'error';
+        }
+        RegExp regex = RegExp(_emailRegex);
+        if (!regex.hasMatch(value)) {
           return 'error';
         }
         return null;
@@ -66,4 +57,6 @@ class _FormElementDescriptionWidgetState extends State<FormElementDescriptionWid
       value: widget.initialValue ?? '',
     );
   }
+
+  static const _emailRegex = r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
 }

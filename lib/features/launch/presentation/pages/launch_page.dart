@@ -18,7 +18,7 @@ class LaunchPage extends StatelessWidget {
           if (state.isRegisteredUser!) {
             HomeRoute().go(context);
           } else {
-            SignInRoute().go(context);
+            SignUpRoute().go(context);
           }
         },
         child: Scaffold(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:triosoft/core/form/elements/form_element_date_of_birth_widget.dart';
+import 'package:triosoft/core/form/elements/form_element_region_widget.dart';
 import 'package:triosoft/core/form/elements/form_element_name_widget.dart';
 import 'package:triosoft/core/form/elements/form_element_phone_widget.dart';
 
@@ -11,7 +11,7 @@ class SignInPage extends StatelessWidget {
     final GlobalKey<FormState> formKey = GlobalKey<FormState>();
     return SafeArea(
       child: Scaffold(
-        body: Padding(
+        body: Container(
           padding: const EdgeInsets.all(16.0),
           child: Form(
             key: formKey,
@@ -38,35 +38,7 @@ class SignInPage extends StatelessWidget {
                         const SizedBox(height: 10),
                         FormElementPhoneWidget(),
                         const SizedBox(height: 10),
-                        FormElementDateOfBirthWidget(
-                          isImageRequired: false,
-                          onDateSelected: (value) {},
-                        ),
-                        const SizedBox(height: 10),
-                        FormElementDateOfBirthWidget(
-                          isImageRequired: false,
-                          onDateSelected: (value) {},
-                        ),
-                        const SizedBox(height: 10),
-                        FormElementDateOfBirthWidget(
-                          isImageRequired: false,
-                          onDateSelected: (value) {},
-                        ),
-                        const SizedBox(height: 10),
-                        FormElementDateOfBirthWidget(
-                          isImageRequired: false,
-                          onDateSelected: (value) {},
-                        ),
-                        const SizedBox(height: 10),
-                        FormElementDateOfBirthWidget(
-                          isImageRequired: false,
-                          onDateSelected: (value) {},
-                        ),
-                        const SizedBox(height: 10),
-                        FormElementDateOfBirthWidget(
-                          isImageRequired: false,
-                          onDateSelected: (value) {},
-                        ),
+
                         const SizedBox(height: 10),
                       ],
                     ),
