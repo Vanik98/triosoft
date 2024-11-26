@@ -114,12 +114,14 @@ class SignUpPageFormElementsWidget extends StatelessWidget {
 
   Widget get _cityWidget => _getWidgetWithBottomPadding(BlocSelector<SignUpBloc, SignUpState, String?>(
         selector: (state) {
-          return state.email;
+          return state.city;
         },
         builder: (context, state) {
           return FormElementCityWidget(
             values: ['asdas', 'asdsad'],
-            onDateSelected: (String) {},
+            onDateSelected: (value) {
+
+            },
           );
         },
       ));

@@ -6,5 +6,7 @@ part 'form_search_event.freezed.dart';
 sealed class FormSearchEvent {
   const factory FormSearchEvent.initial() = FormSearchInitialEvent;
 
-  const factory FormSearchEvent.search(String text,List<String> list) = FormSearchSearchEvent;
+  const factory FormSearchEvent.setList(List<String> list) = FormSearchSetListEvent;
+
+  const factory FormSearchEvent.search(String text) = FormSearchSearchEvent;
 }

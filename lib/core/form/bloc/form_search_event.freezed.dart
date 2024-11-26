@@ -19,37 +19,43 @@ mixin _$FormSearchEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(String text, List<String> list) search,
+    required TResult Function(List<String> list) setList,
+    required TResult Function(String text) search,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(String text, List<String> list)? search,
+    TResult? Function(List<String> list)? setList,
+    TResult? Function(String text)? search,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(String text, List<String> list)? search,
+    TResult Function(List<String> list)? setList,
+    TResult Function(String text)? search,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(FormSearchInitialEvent value) initial,
+    required TResult Function(FormSearchSetListEvent value) setList,
     required TResult Function(FormSearchSearchEvent value) search,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(FormSearchInitialEvent value)? initial,
+    TResult? Function(FormSearchSetListEvent value)? setList,
     TResult? Function(FormSearchSearchEvent value)? search,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FormSearchInitialEvent value)? initial,
+    TResult Function(FormSearchSetListEvent value)? setList,
     TResult Function(FormSearchSearchEvent value)? search,
     required TResult orElse(),
   }) =>
@@ -122,7 +128,8 @@ class _$FormSearchInitialEventImpl implements FormSearchInitialEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(String text, List<String> list) search,
+    required TResult Function(List<String> list) setList,
+    required TResult Function(String text) search,
   }) {
     return initial();
   }
@@ -131,7 +138,8 @@ class _$FormSearchInitialEventImpl implements FormSearchInitialEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(String text, List<String> list)? search,
+    TResult? Function(List<String> list)? setList,
+    TResult? Function(String text)? search,
   }) {
     return initial?.call();
   }
@@ -140,7 +148,8 @@ class _$FormSearchInitialEventImpl implements FormSearchInitialEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(String text, List<String> list)? search,
+    TResult Function(List<String> list)? setList,
+    TResult Function(String text)? search,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -153,6 +162,7 @@ class _$FormSearchInitialEventImpl implements FormSearchInitialEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(FormSearchInitialEvent value) initial,
+    required TResult Function(FormSearchSetListEvent value) setList,
     required TResult Function(FormSearchSearchEvent value) search,
   }) {
     return initial(this);
@@ -162,6 +172,7 @@ class _$FormSearchInitialEventImpl implements FormSearchInitialEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(FormSearchInitialEvent value)? initial,
+    TResult? Function(FormSearchSetListEvent value)? setList,
     TResult? Function(FormSearchSearchEvent value)? search,
   }) {
     return initial?.call(this);
@@ -171,6 +182,7 @@ class _$FormSearchInitialEventImpl implements FormSearchInitialEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FormSearchInitialEvent value)? initial,
+    TResult Function(FormSearchSetListEvent value)? setList,
     TResult Function(FormSearchSearchEvent value)? search,
     required TResult orElse(),
   }) {
@@ -186,13 +198,169 @@ abstract class FormSearchInitialEvent implements FormSearchEvent {
 }
 
 /// @nodoc
+abstract class _$$FormSearchSetListEventImplCopyWith<$Res> {
+  factory _$$FormSearchSetListEventImplCopyWith(
+          _$FormSearchSetListEventImpl value,
+          $Res Function(_$FormSearchSetListEventImpl) then) =
+      __$$FormSearchSetListEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<String> list});
+}
+
+/// @nodoc
+class __$$FormSearchSetListEventImplCopyWithImpl<$Res>
+    extends _$FormSearchEventCopyWithImpl<$Res, _$FormSearchSetListEventImpl>
+    implements _$$FormSearchSetListEventImplCopyWith<$Res> {
+  __$$FormSearchSetListEventImplCopyWithImpl(
+      _$FormSearchSetListEventImpl _value,
+      $Res Function(_$FormSearchSetListEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of FormSearchEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? list = null,
+  }) {
+    return _then(_$FormSearchSetListEventImpl(
+      null == list
+          ? _value._list
+          : list // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FormSearchSetListEventImpl implements FormSearchSetListEvent {
+  const _$FormSearchSetListEventImpl(final List<String> list) : _list = list;
+
+  final List<String> _list;
+  @override
+  List<String> get list {
+    if (_list is EqualUnmodifiableListView) return _list;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_list);
+  }
+
+  @override
+  String toString() {
+    return 'FormSearchEvent.setList(list: $list)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FormSearchSetListEventImpl &&
+            const DeepCollectionEquality().equals(other._list, _list));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_list));
+
+  /// Create a copy of FormSearchEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FormSearchSetListEventImplCopyWith<_$FormSearchSetListEventImpl>
+      get copyWith => __$$FormSearchSetListEventImplCopyWithImpl<
+          _$FormSearchSetListEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(List<String> list) setList,
+    required TResult Function(String text) search,
+  }) {
+    return setList(list);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(List<String> list)? setList,
+    TResult? Function(String text)? search,
+  }) {
+    return setList?.call(list);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(List<String> list)? setList,
+    TResult Function(String text)? search,
+    required TResult orElse(),
+  }) {
+    if (setList != null) {
+      return setList(list);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FormSearchInitialEvent value) initial,
+    required TResult Function(FormSearchSetListEvent value) setList,
+    required TResult Function(FormSearchSearchEvent value) search,
+  }) {
+    return setList(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FormSearchInitialEvent value)? initial,
+    TResult? Function(FormSearchSetListEvent value)? setList,
+    TResult? Function(FormSearchSearchEvent value)? search,
+  }) {
+    return setList?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FormSearchInitialEvent value)? initial,
+    TResult Function(FormSearchSetListEvent value)? setList,
+    TResult Function(FormSearchSearchEvent value)? search,
+    required TResult orElse(),
+  }) {
+    if (setList != null) {
+      return setList(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FormSearchSetListEvent implements FormSearchEvent {
+  const factory FormSearchSetListEvent(final List<String> list) =
+      _$FormSearchSetListEventImpl;
+
+  List<String> get list;
+
+  /// Create a copy of FormSearchEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FormSearchSetListEventImplCopyWith<_$FormSearchSetListEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 abstract class _$$FormSearchSearchEventImplCopyWith<$Res> {
   factory _$$FormSearchSearchEventImplCopyWith(
           _$FormSearchSearchEventImpl value,
           $Res Function(_$FormSearchSearchEventImpl) then) =
       __$$FormSearchSearchEventImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String text, List<String> list});
+  $Res call({String text});
 }
 
 /// @nodoc
@@ -209,17 +377,12 @@ class __$$FormSearchSearchEventImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? text = null,
-    Object? list = null,
   }) {
     return _then(_$FormSearchSearchEventImpl(
       null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String,
-      null == list
-          ? _value._list
-          : list // ignore: cast_nullable_to_non_nullable
-              as List<String>,
     ));
   }
 }
@@ -227,22 +390,14 @@ class __$$FormSearchSearchEventImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$FormSearchSearchEventImpl implements FormSearchSearchEvent {
-  const _$FormSearchSearchEventImpl(this.text, final List<String> list)
-      : _list = list;
+  const _$FormSearchSearchEventImpl(this.text);
 
   @override
   final String text;
-  final List<String> _list;
-  @override
-  List<String> get list {
-    if (_list is EqualUnmodifiableListView) return _list;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_list);
-  }
 
   @override
   String toString() {
-    return 'FormSearchEvent.search(text: $text, list: $list)';
+    return 'FormSearchEvent.search(text: $text)';
   }
 
   @override
@@ -250,13 +405,11 @@ class _$FormSearchSearchEventImpl implements FormSearchSearchEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FormSearchSearchEventImpl &&
-            (identical(other.text, text) || other.text == text) &&
-            const DeepCollectionEquality().equals(other._list, _list));
+            (identical(other.text, text) || other.text == text));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, text, const DeepCollectionEquality().hash(_list));
+  int get hashCode => Object.hash(runtimeType, text);
 
   /// Create a copy of FormSearchEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -271,29 +424,32 @@ class _$FormSearchSearchEventImpl implements FormSearchSearchEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(String text, List<String> list) search,
+    required TResult Function(List<String> list) setList,
+    required TResult Function(String text) search,
   }) {
-    return search(text, list);
+    return search(text);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(String text, List<String> list)? search,
+    TResult? Function(List<String> list)? setList,
+    TResult? Function(String text)? search,
   }) {
-    return search?.call(text, list);
+    return search?.call(text);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(String text, List<String> list)? search,
+    TResult Function(List<String> list)? setList,
+    TResult Function(String text)? search,
     required TResult orElse(),
   }) {
     if (search != null) {
-      return search(text, list);
+      return search(text);
     }
     return orElse();
   }
@@ -302,6 +458,7 @@ class _$FormSearchSearchEventImpl implements FormSearchSearchEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(FormSearchInitialEvent value) initial,
+    required TResult Function(FormSearchSetListEvent value) setList,
     required TResult Function(FormSearchSearchEvent value) search,
   }) {
     return search(this);
@@ -311,6 +468,7 @@ class _$FormSearchSearchEventImpl implements FormSearchSearchEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(FormSearchInitialEvent value)? initial,
+    TResult? Function(FormSearchSetListEvent value)? setList,
     TResult? Function(FormSearchSearchEvent value)? search,
   }) {
     return search?.call(this);
@@ -320,6 +478,7 @@ class _$FormSearchSearchEventImpl implements FormSearchSearchEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FormSearchInitialEvent value)? initial,
+    TResult Function(FormSearchSetListEvent value)? setList,
     TResult Function(FormSearchSearchEvent value)? search,
     required TResult orElse(),
   }) {
@@ -331,11 +490,10 @@ class _$FormSearchSearchEventImpl implements FormSearchSearchEvent {
 }
 
 abstract class FormSearchSearchEvent implements FormSearchEvent {
-  const factory FormSearchSearchEvent(
-      final String text, final List<String> list) = _$FormSearchSearchEventImpl;
+  const factory FormSearchSearchEvent(final String text) =
+      _$FormSearchSearchEventImpl;
 
   String get text;
-  List<String> get list;
 
   /// Create a copy of FormSearchEvent
   /// with the given fields replaced by the non-null parameter values.

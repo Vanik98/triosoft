@@ -20,12 +20,12 @@ class FormElementSubjectWidget extends StatelessWidget {
         builder: (context, state) {
           return FormElementSelectorFullWidget(
             onSearchChanged: (v) {
-              context.read<FormSearchBloc>().add(FormSearchEvent.search(v, values));
+              context.read<FormSearchBloc>().add(FormSearchEvent.search(v));
             },
             onDateSelected: (v) {
               onDateSelected(v);
             },
-            formElements: _createFormElements(),
+            formElements: _createFormElements(state.filteredTextList),
             labelText: 'Subject',
             isHaveSearch: true,
           );
@@ -34,9 +34,9 @@ class FormElementSubjectWidget extends StatelessWidget {
     );
   }
 
-  List<FormElement> _createFormElements() {
+  List<FormElement> _createFormElements(List<String> list) {
     final List<FormElement> formElements = [];
-    for (var v in values) {
+    for (var v in list) {
       formElements.add(FormElement(data: v, title: v));
     }
     return formElements;
