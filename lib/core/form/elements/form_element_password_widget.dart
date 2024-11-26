@@ -41,7 +41,7 @@ class _FormElementPasswordWidgetState extends State<FormElementPasswordWidget> {
   Widget build(BuildContext context) {
     return FormText(
       hintText: '',
-      obscureText: false,
+      obscureText: true,
       controller: textEditingController,
       labelText: widget.labelText ?? 'password',
       onTextChanged: widget.onTextChanged,
