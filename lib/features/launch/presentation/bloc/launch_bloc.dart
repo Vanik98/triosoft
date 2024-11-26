@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:triosoft/features/authorization/domain/usecases/get_user_token.dart';
+import 'package:triosoft/features/authorization/domain/usecases/get_user_token_use_case.dart';
 
 import 'launch_event.dart';
 

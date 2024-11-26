@@ -2,20 +2,20 @@ import 'package:flutter/material.dart';
 
 import '../base/form_text.dart';
 
-class FormElementNameWidget extends StatefulWidget {
+class FormElementPasswordWidget extends StatefulWidget {
   final ValueChanged<String?>? onTextChanged;
   final ValueChanged<String?>? onFocusChanged;
   final String? initialValue;
   final String? labelText;
 
-  const FormElementNameWidget(
+  const FormElementPasswordWidget(
       {super.key, this.onTextChanged, this.onFocusChanged, this.initialValue, this.labelText});
 
   @override
-  State<FormElementNameWidget> createState() => _FormElementNameWidgetState();
+  State<FormElementPasswordWidget> createState() => _FormElementPasswordWidgetState();
 }
 
-class _FormElementNameWidgetState extends State<FormElementNameWidget> {
+class _FormElementPasswordWidgetState extends State<FormElementPasswordWidget> {
   late TextEditingController textEditingController;
 
   @override
@@ -41,6 +41,7 @@ class _FormElementNameWidgetState extends State<FormElementNameWidget> {
   Widget build(BuildContext context) {
     return FormText(
       hintText: '',
+      obscureText: false,
       controller: textEditingController,
       labelText: widget.labelText ?? 'password',
       onTextChanged: widget.onTextChanged,

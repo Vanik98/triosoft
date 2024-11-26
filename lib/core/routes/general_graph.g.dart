@@ -8,8 +8,6 @@ part of 'general_graph.dart';
 
 List<RouteBase> get $appRoutes => [
       $homeRoute,
-      $recoverPasswordRoute,
-      $signInRoute,
       $signUpRoute,
       $launchRoute,
     ];
@@ -24,51 +22,6 @@ extension $HomeRouteExtension on HomeRoute {
 
   String get location => GoRouteData.$location(
         '/home',
-      );
-
-  void go(BuildContext context) => context.go(location);
-
-  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
-
-  void pushReplacement(BuildContext context) =>
-      context.pushReplacement(location);
-
-  void replace(BuildContext context) => context.replace(location);
-}
-
-RouteBase get $recoverPasswordRoute => GoRouteData.$route(
-      path: '/recover-Password',
-      factory: $RecoverPasswordRouteExtension._fromState,
-    );
-
-extension $RecoverPasswordRouteExtension on RecoverPasswordRoute {
-  static RecoverPasswordRoute _fromState(GoRouterState state) =>
-      RecoverPasswordRoute();
-
-  String get location => GoRouteData.$location(
-        '/recover-Password',
-      );
-
-  void go(BuildContext context) => context.go(location);
-
-  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
-
-  void pushReplacement(BuildContext context) =>
-      context.pushReplacement(location);
-
-  void replace(BuildContext context) => context.replace(location);
-}
-
-RouteBase get $signInRoute => GoRouteData.$route(
-      path: '/sign-in',
-      factory: $SignInRouteExtension._fromState,
-    );
-
-extension $SignInRouteExtension on SignInRoute {
-  static SignInRoute _fromState(GoRouterState state) => SignInRoute();
-
-  String get location => GoRouteData.$location(
-        '/sign-in',
       );
 
   void go(BuildContext context) => context.go(location);

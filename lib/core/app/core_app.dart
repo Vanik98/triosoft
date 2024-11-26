@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -19,15 +17,13 @@ class CoreAppWidget extends StatefulWidget {
 class _CoreAppWidgetState extends State<CoreAppWidget> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      child: MaterialApp.router(
-        debugShowCheckedModeBanner: false,
-        routerConfig: widget.appRouter,
-        localizationsDelegates: context.localizationDelegates,
-        supportedLocales: context.supportedLocales,
-        locale: context.locale,
-        // builder: EasyDialogManager.init(),
-      ),
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      routerConfig: widget.appRouter,
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
+      // builder: EasyDialogManager.init(),
     );
   }
 }

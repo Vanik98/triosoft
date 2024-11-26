@@ -10,7 +10,11 @@ class HomePage extends StatelessWidget {
         children: [
           Expanded(
               child: Center(
-            child: Text('HomePage'),
+            child: Column(
+              children: [
+                Text('Hello My Friend'),
+              ],
+            ),
           ))
         ],
       ),
