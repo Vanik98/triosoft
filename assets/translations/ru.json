@@ -1,3 +1,17 @@
 {
-  "no_internet_connection": "Нет Подключения К Интернету"
+  "sign_up": "Зарегистрироваться",
+  "quick_easy": "Быстро и легко",
+  "name": "Имя",
+  "email": "Эл. почта",
+  "number": "Номер",
+  "region": "Регион",
+  "city_village": "Город, Деревня",
+  "school": "Школа",
+  "subject": "Предмет",
+  "grade": "Класс",
+  "password": "Пароль",
+  "confirm_password": "Подтвердить пароль",
+  "ok": "Ок",
+  "error": "ошибка",
+  "log_out": "Выйти"
 }

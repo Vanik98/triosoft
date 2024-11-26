@@ -1,3 +1,17 @@
 {
-  "no_internet_connection": "No Internet Connection"
+  "sign_up": "Sign Up",
+  "quick_easy": "It is Quick and Easy",
+  "name": "Name",
+  "email": "Email",
+  "number": "Number",
+  "region": "Region",
+  "city_village": "City, Village",
+  "school": "School",
+  "subject": "Subject",
+  "grade": "Grade",
+  "password": "Password",
+  "confirm_password": "Confirm Password",
+  "ok": "Ok",
+  "error": "error",
+  "log_out": "Log Out"
 }
