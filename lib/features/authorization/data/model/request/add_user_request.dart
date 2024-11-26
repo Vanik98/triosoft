@@ -1,3 +1,8 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'add_user_request.g.dart';
+
+@JsonSerializable()
 class AddUserRequest {
   String name;
   String lastName;
@@ -22,4 +27,8 @@ class AddUserRequest {
     required this.grade,
     required this.password,
   });
+
+  factory AddUserRequest.fromJson(Map<String, dynamic> json) => _$AddUserRequestFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AddUserRequestToJson(this);
 }

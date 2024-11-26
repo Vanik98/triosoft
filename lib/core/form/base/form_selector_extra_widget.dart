@@ -8,12 +8,12 @@ class FormElementExtraWidget<T> extends StatelessWidget {
     super.key,
     required this.element,
     required this.onSelected,
-    required this.isHaveSearch,
+    required this.onSearchChanged,
   });
 
   final List<FormElement> element;
   final Function(T data) onSelected;
-  final bool isHaveSearch;
+  final ValueChanged<String>? onSearchChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +23,9 @@ class FormElementExtraWidget<T> extends StatelessWidget {
       height: 300,
       child: Column(
         children: [
-          if (isHaveSearch == true)
+          if (onSearchChanged != null)
             SearchWidget(
-              onChanged: (String value) {
-                //todo:Filter
-              },
+              onChanged: onSearchChanged!,
             ),
           const SizedBox(height: 10),
           Expanded(

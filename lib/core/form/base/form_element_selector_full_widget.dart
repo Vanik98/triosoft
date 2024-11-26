@@ -11,6 +11,7 @@ class FormElementSelectorFullWidget<T> extends StatefulWidget {
   final List<FormElement<T>> formElements;
   final Icon? icon;
   final bool isHaveSearch;
+  final ValueChanged<String>? onSearchChanged;
 
   const FormElementSelectorFullWidget({
     super.key,
@@ -20,6 +21,7 @@ class FormElementSelectorFullWidget<T> extends StatefulWidget {
     required this.labelText,
     this.icon,
     this.isHaveSearch = false,
+    this.onSearchChanged,
   });
 
   @override
@@ -78,7 +80,7 @@ class _FormElementSelectorFullWidgetState<T> extends State<FormElementSelectorFu
                 });
                 widget.onDateSelected(v);
               },
-              isHaveSearch: widget.isHaveSearch,
+              onSearchChanged: widget.onSearchChanged,
             ),
         ],
       ),
