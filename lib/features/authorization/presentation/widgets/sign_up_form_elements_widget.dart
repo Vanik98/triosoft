@@ -172,6 +172,7 @@ class SignUpPageFormElementsWidget extends StatelessWidget {
               context.read<SignUpBloc>().add(SignUpEvent.changeGrade(values));
             },
             scrollController: scrollController,
+            initialValues: grades,
           );
         },
       ));
@@ -187,6 +188,7 @@ class SignUpPageFormElementsWidget extends StatelessWidget {
               context.read<SignUpBloc>().add(SignUpEvent.changeSubject(values));
             },
             scrollController: scrollController,
+            initialValues: subjects,
             // initialValues: subjects,
           );
         },

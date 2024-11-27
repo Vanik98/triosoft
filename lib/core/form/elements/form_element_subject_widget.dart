@@ -9,11 +9,12 @@ import '../bloc/form_search_bloc.dart';
 import '../bloc/form_search_event.dart';
 
 class FormElementSubjectWidget extends StatelessWidget {
-  const FormElementSubjectWidget({super.key, required this.values, required this.onDateSelected, required this.scrollController});
+  const FormElementSubjectWidget({super.key, required this.values, required this.onDateSelected, required this.scrollController, this.initialValues});
 
   final Function(List<String>) onDateSelected;
   final List<String> values;
   final ScrollController scrollController;
+  final List<String>? initialValues;
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +30,7 @@ class FormElementSubjectWidget extends StatelessWidget {
             onChoose: (v){
               onDateSelected(v);
             },
+            initialValue: initialValues?.join(", "),
             formElements: _createFormElements(state.filteredTextList),
             labelText: LocaleKeys.subject.tr(),
             isHaveSearch: true,
@@ -42,7 +44,16 @@ class FormElementSubjectWidget extends StatelessWidget {
   List<FormElement<String>> _createFormElements(List<String> list) {
     final List<FormElement<String>> formElements = [];
     for (var v in list) {
-      formElements.add(FormElement(data: v, title: v,isChecked: false));
+      var isInInitialValues = false;
+      if (initialValues != null) {
+        for (var i in initialValues!) {
+          if (v == i) {
+            isInInitialValues = true;
+            break;
+          }
+        }
+      }
+      formElements.add(FormElement(data: v, title: v, isChecked: isInInitialValues));
     }
     return formElements;
   }

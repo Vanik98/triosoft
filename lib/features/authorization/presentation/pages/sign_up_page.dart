@@ -25,7 +25,7 @@ class SignUpPage extends StatelessWidget {
           BlocListener<LoginBloc, LoginState>(
             listenWhen: (oldState, newState) => newState.token != null && newState.token != oldState.token,
             listener: (context, state) {
-              HomeRoute().push(context);
+              HomeRoute().go(context);
             },
           ),
           BlocListener<LoginBloc, LoginState>(
@@ -33,7 +33,7 @@ class SignUpPage extends StatelessWidget {
             listener: (context, state) {
               showDialog(
                 context: context,
-                barrierDismissible: false, // Prevents dismissing by tapping outside
+                barrierDismissible: false,
                 builder: (BuildContext context) {
                   return const AlertDialog(content: CircularProgressIndicator());
                 },

@@ -14,10 +14,12 @@ class FormElementGradeWidget extends StatelessWidget {
     required this.values,
     required this.onDateSelected,
     required this.scrollController,
+    required this.initialValues,
   });
 
   final Function(List<String>) onDateSelected;
   final List<String> values;
+  final List<String>? initialValues;
   final ScrollController scrollController;
 
   @override
@@ -30,11 +32,13 @@ class FormElementGradeWidget extends StatelessWidget {
             onSearchChanged: (v) {
               context.read<FormSearchBloc>().add(FormSearchEvent.search(v));
             },
+            initialValue: initialValues?.join(", "),
             onDateSelected: (v) {},
             onChoose: (v) {
               onDateSelected(v);
             },
             formElements: _createFormElements(state.filteredTextList),
+            isHaveSearch: true,
             labelText: LocaleKeys.grade.tr(),
             scrollController: scrollController,
           );
@@ -46,7 +50,16 @@ class FormElementGradeWidget extends StatelessWidget {
   List<FormElement<String>> _createFormElements(List<String> list) {
     final List<FormElement<String>> formElements = [];
     for (var v in list) {
-      formElements.add(FormElement(data: v, title: v,isChecked: false));
+      var isInInitialValues = false;
+      if (initialValues != null) {
+        for (var i in initialValues!) {
+          if (v == i) {
+            isInInitialValues = true;
+            break;
+          }
+        }
+      }
+      formElements.add(FormElement(data: v, title: v, isChecked: isInInitialValues));
     }
     return formElements;
   }
