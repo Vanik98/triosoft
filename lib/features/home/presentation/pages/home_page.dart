@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
         create: (context) => ProfileBloc()..add(ProfileEvent.getProfileInfo(token)),
         child: BlocBuilder<ProfileBloc, ProfileState>(
           builder: (context, state) {
-            if (state.fullName == null) return CircularProgressIndicator();
+            if (state.fullName == null) return const CircularProgressIndicator();
             return Scaffold(
               body: Column(
                 children: [

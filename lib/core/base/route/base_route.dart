@@ -14,7 +14,6 @@ Page getPage({
   required Widget child,
   required GoRouterState state,
 }) {
-
   return CupertinoPage(
     key: state.pageKey,
     child: child,

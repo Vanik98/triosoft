@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:triosoft/core/routes/app_routes.dart';
 import 'package:triosoft/features/authorization/presentation/bloc/login/login_bloc.dart';
-import 'package:triosoft/features/authorization/presentation/bloc/login/login_event.dart';
 
 import '../core/app/core_app.dart';
 import '../core/base/localization/easy_localization_config.dart';

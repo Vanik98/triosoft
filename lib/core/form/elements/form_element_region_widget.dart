@@ -4,10 +4,16 @@ import '../base/form_element_selector_full_widget.dart';
 import '../base/form_element_wrapper.dart';
 
 class FormElementRegionWidget extends StatelessWidget {
-  const FormElementRegionWidget({super.key, required this.values, required this.onDateSelected});
+  const FormElementRegionWidget({
+    super.key,
+    required this.values,
+    required this.onDateSelected,
+    required this.scrollController,
+  });
 
   final Function(String) onDateSelected;
   final List<String> values;
+  final ScrollController scrollController;
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +23,7 @@ class FormElementRegionWidget extends StatelessWidget {
       },
       formElements: _createFormElements(),
       labelText: 'region',
+      scrollController: scrollController,
     );
   }
 

@@ -12,6 +12,7 @@ class FormElementSelectorFullWidget<T> extends StatefulWidget {
   final Icon? icon;
   final bool isHaveSearch;
   final ValueChanged<String>? onSearchChanged;
+  final ScrollController scrollController;
 
   const FormElementSelectorFullWidget({
     super.key,
@@ -22,6 +23,7 @@ class FormElementSelectorFullWidget<T> extends StatefulWidget {
     this.icon,
     this.isHaveSearch = false,
     this.onSearchChanged,
+    required this.scrollController,
   });
 
   @override
@@ -81,6 +83,7 @@ class _FormElementSelectorFullWidgetState<T> extends State<FormElementSelectorFu
                 widget.onDateSelected(v);
               },
               onSearchChanged: widget.onSearchChanged,
+              scrollController: widget.scrollController,
             ),
         ],
       ),

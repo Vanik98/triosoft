@@ -23,7 +23,6 @@ class _CoreAppWidgetState extends State<CoreAppWidget> with WidgetsBindingObserv
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      // builder: EasyDialogManager.init(),
     );
   }
 }

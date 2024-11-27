@@ -21,7 +21,9 @@ import '../../domain/entites/grade_enum.dart';
 import '../../domain/entites/region_enum.dart';
 
 class SignUpPageFormElementsWidget extends StatelessWidget {
-  const SignUpPageFormElementsWidget({super.key});
+  const SignUpPageFormElementsWidget({super.key, required this.scrollController});
+
+  final ScrollController scrollController;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +36,7 @@ class SignUpPageFormElementsWidget extends StatelessWidget {
         _cityWidget,
         _schoolWidget,
         _gradeWidget,
-        // _subjectWidget,
+        _subjectWidget,
         _passwordWidget,
         _confirmWidget,
       ],
@@ -124,6 +126,7 @@ class SignUpPageFormElementsWidget extends StatelessWidget {
             onDateSelected: (value) {
               context.read<SignUpBloc>().add(SignUpEvent.changeRegion(value));
             },
+            scrollController: scrollController,
           );
         },
       ));
@@ -138,6 +141,7 @@ class SignUpPageFormElementsWidget extends StatelessWidget {
             onDateSelected: (value) {
               context.read<SignUpBloc>().add(SignUpEvent.changeCity(value));
             },
+            scrollController: scrollController,
           );
         },
       ));
@@ -152,6 +156,7 @@ class SignUpPageFormElementsWidget extends StatelessWidget {
             onDateSelected: (value) {
               context.read<SignUpBloc>().add(SignUpEvent.changeSchool(value));
             },
+            scrollController: scrollController,
           );
         },
       ));
@@ -166,6 +171,7 @@ class SignUpPageFormElementsWidget extends StatelessWidget {
             onDateSelected: (value) {
               context.read<SignUpBloc>().add(SignUpEvent.changeGrade(value));
             },
+            scrollController: scrollController,
           );
         },
       ));
@@ -180,6 +186,7 @@ class SignUpPageFormElementsWidget extends StatelessWidget {
             onDateSelected: (value) {
               context.read<SignUpBloc>().add(SignUpEvent.changeSubject(value));
             },
+            scrollController: scrollController,
           );
         },
       ));

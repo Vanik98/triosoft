@@ -84,6 +84,7 @@ class SignUpPage extends StatelessWidget {
 
   Widget _body() {
     final formKey = GlobalKey<FormState>();
+    final scrollController = ScrollController();
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Form(
@@ -91,7 +92,11 @@ class SignUpPage extends StatelessWidget {
         child: Column(
           children: [
             const SignUpHeaderWidget(),
-            const Expanded(child: SingleChildScrollView(child: SignUpPageFormElementsWidget())),
+            Expanded(
+                child: SingleChildScrollView(
+                    child: SignUpPageFormElementsWidget(
+              scrollController: scrollController,
+            ))),
             SignUpBottomWidget(formKey: formKey),
           ],
         ),

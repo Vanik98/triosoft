@@ -1,6 +1,4 @@
-import 'package:triosoft/generated/locale_keys.g.dart';
-
-enum SchoolEnum{
+enum SchoolEnum {
   n100('100'),
   n103('103');
 

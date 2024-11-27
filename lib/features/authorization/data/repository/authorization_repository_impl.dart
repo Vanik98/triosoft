@@ -25,7 +25,7 @@ class AuthorizationRepositoryImpl implements AuthorizationRepository {
     final result = await authApiService.registerUser(addUserRequest);
     // parse
     // la la la la la la la la la la la la
-    //return UisTATE
+    //return UiState
     return UiSuccess(result);
   }
 }

@@ -15,7 +15,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   final RegisterUserUseCase _registerUserUseCase;
   final GetUserTokenUseCase _getUserTokenUseCase;
 
-  LoginBloc(this._putUserTokenUseCase,this._removeUserTokenUseCase, this._registerUserUseCase, this._getUserTokenUseCase) : super(LoginState.initial()) {
+  LoginBloc(this._putUserTokenUseCase, this._removeUserTokenUseCase, this._registerUserUseCase, this._getUserTokenUseCase) : super(LoginState.initial()) {
     on<LoginEventRegisterUserEvent>(_registerUser);
     on<LoginEventLogOutEvent>(_logOutUser);
     on<LoginEventGetTokenEvent>(_getToken);
@@ -43,7 +43,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   }
 
   void _getToken(LoginEventGetTokenEvent event, Emitter<LoginState> emitter) async {
-   final token = _getUserTokenUseCase.execute();
+    final token = _getUserTokenUseCase.execute();
     emitter(state.copyWith(token: token));
   }
 }

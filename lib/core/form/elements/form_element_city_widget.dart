@@ -11,10 +11,12 @@ class FormElementCityWidget extends StatelessWidget {
     super.key,
     required this.values,
     required this.onDateSelected,
+    required this.scrollController,
   });
 
   final Function(String) onDateSelected;
   final List<String> values;
+  final ScrollController scrollController;
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +34,7 @@ class FormElementCityWidget extends StatelessWidget {
             formElements: _createFormElements(state.filteredTextList),
             labelText: 'City',
             isHaveSearch: true,
+            scrollController: scrollController,
           );
         },
       ),

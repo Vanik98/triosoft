@@ -7,10 +7,11 @@ import '../bloc/form_search_bloc.dart';
 import '../bloc/form_search_event.dart';
 
 class FormElementSchoolWidget extends StatelessWidget {
-  const FormElementSchoolWidget({super.key, required this.values, required this.onDateSelected});
+  const FormElementSchoolWidget({super.key, required this.values, required this.onDateSelected, required this.scrollController});
 
   final Function(String) onDateSelected;
   final List<String> values;
+  final ScrollController scrollController;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class FormElementSchoolWidget extends StatelessWidget {
             },
             formElements: _createFormElements(state.filteredTextList),
             labelText: 'School',
-            isHaveSearch: true,
+            isHaveSearch: true, scrollController: scrollController,
           );
         },
       ),

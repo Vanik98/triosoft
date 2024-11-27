@@ -39,7 +39,7 @@ class SignUpBottomWidget extends StatelessWidget {
                                 region: state.region!,
                                 city: state.city!,
                                 school: state.school!,
-                                subject: 'state.subject!', // todo:change
+                                subject: state.subject!,
                                 grade: state.grade!,
                                 password: state.password!,
                               ),
