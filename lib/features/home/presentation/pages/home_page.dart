@@ -28,12 +28,19 @@ class HomePage extends StatelessWidget {
               body: Column(
                 children: [
                   const SizedBox(height: 300),
-                  Center(child: Text('Hello my friend -> ${state.fullName}')),
-                  FilledButton(
-                      onPressed: () {
-                        context.read<LoginBloc>().add(const LoginEvent.logOutUser());
-                      },
-                      child: Text(LocaleKeys.log_out.tr()))
+                  Center(
+                      child: Text(
+                    '${LocaleKeys.name.tr()} & ${LocaleKeys.last_name.tr()} -> ${state.fullName}',
+                    maxLines: 2,
+                  )),
+                  Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: FilledButton(
+                        onPressed: () {
+                          context.read<LoginBloc>().add(const LoginEvent.logOutUser());
+                        },
+                        child: Text(LocaleKeys.log_out.tr())),
+                  )
                 ],
               ),
             );
