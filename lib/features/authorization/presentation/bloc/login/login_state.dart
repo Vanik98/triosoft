@@ -1,17 +1,19 @@
 part of 'login_bloc.dart';
 
 class LoginState {
-  bool? isLogged;
+  String? token;
   bool? isShowDialog;
+  bool? isShowError;
 
- LoginState._({this.isLogged,this.isShowDialog});
+  LoginState._({this.token, this.isShowDialog,this.isShowError});
 
-  factory LoginState.initial() =>LoginState._();
+  factory LoginState.initial() => LoginState._();
 
- LoginState copyWith({bool? isLogged,bool? isShowDialog}) {
+  LoginState copyWith({String? token, bool? isShowDialog,bool? isShowError}) {
     return LoginState._(
       isShowDialog: isShowDialog ?? this.isShowDialog,
-      isLogged: isLogged ?? this.isLogged,
+      token: token ?? this.token,
+      isShowError: isShowError ?? this.isShowError,
     );
   }
 }

@@ -13,10 +13,10 @@ class LaunchPage extends StatelessWidget {
     return BlocProvider(
       create: (context) => LaunchBloc(locator.get())..add(const LaunchEvent.checkIsRegisteredUser()),
       child: BlocListener<LaunchBloc, LaunchState>(
-        listenWhen: (oldState, newState) => newState.isRegisteredUser != null && newState.isRegisteredUser != oldState.isRegisteredUser,
+        listenWhen: (oldState, newState) => newState.token != oldState.token,
         listener: (context, state) {
-          if (state.isRegisteredUser!) {
-            HomeRoute().go(context);
+          if (state.token != null) {
+            HomeRoute(token: state.token!).go(context);
           } else {
             SignUpRoute().go(context);
           }

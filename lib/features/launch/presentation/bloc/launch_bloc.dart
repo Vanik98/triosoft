@@ -14,6 +14,6 @@ class LaunchBloc extends Bloc<LaunchEvent, LaunchState> {
 
   void _checkIsRegisteredUser(LaunchEventCheckIsRegisteredUserEvent event, Emitter<LaunchState> emitter) {
     final token = _getUserTokenUseCase.execute();
-    emitter(state.copyWith(isRegisteredUser: token != null));
+    emitter(state.copyWith(token: token));
   }
 }

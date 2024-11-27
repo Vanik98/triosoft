@@ -18,12 +18,16 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   void _registerUser(LoginEventRegisterUserEvent event, Emitter<LoginState> emitter) async {
     emitter(state.copyWith(isShowDialog: true));
     final UiState<String?> result = await _registerUserUseCase.execute(event.addUserRequest);
-    emitter(state.copyWith(isShowDialog: true));
-    if (result is UiSuccess<String>) {
-      _putUserTokenUseCase.execute(result.data!);
-      emitter(state.copyWith(isLogged: true));
+    emitter(state.copyWith(isShowDialog: false));
+    if (result is UiSuccess<String?>) {
+      if (result.data != null) {
+        _putUserTokenUseCase.execute(result.data!);
+        emitter(state.copyWith(token: result.data!));
+      } else {
+        emitter(state.copyWith(isShowError: true));
+      }
     } else {
-      emitter(state.copyWith(isLogged: false));
+      emitter(state.copyWith(isShowError: true));
     }
   }
 }

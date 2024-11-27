@@ -1,15 +1,15 @@
 part of 'launch_bloc.dart';
 
 class LaunchState {
-  bool? isRegisteredUser;
+  String? token;
 
-  LaunchState._({this.isRegisteredUser});
+  LaunchState._({this.token});
 
   factory LaunchState.initial() => LaunchState._();
 
-  LaunchState copyWith({bool? isRegisteredUser}) {
+  LaunchState copyWith({String? token}) {
     return LaunchState._(
-      isRegisteredUser: isRegisteredUser ?? this.isRegisteredUser,
+      token: token ?? this.token,
     );
   }
 }

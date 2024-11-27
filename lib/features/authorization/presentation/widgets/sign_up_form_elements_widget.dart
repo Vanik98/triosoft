@@ -34,7 +34,7 @@ class SignUpPageFormElementsWidget extends StatelessWidget {
         _cityWidget,
         _schoolWidget,
         _gradeWidget,
-        _subjectWidget,
+        // _subjectWidget,
         _passwordWidget,
         _confirmWidget,
       ],
@@ -143,18 +143,18 @@ class SignUpPageFormElementsWidget extends StatelessWidget {
       ));
 
   Widget get _schoolWidget => _getWidgetWithBottomPadding(BlocSelector<SignUpBloc, SignUpState, String?>(
-    selector: (state) {
-      return state.city;
-    },
-    builder: (context, city) {
-      return FormElementSchoolWidget(
-        values: schoolNames,
-        onDateSelected: (value) {
-          context.read<SignUpBloc>().add(SignUpEvent.changeCity(value));
+        selector: (state) {
+          return state.school;
         },
-      );
-    },
-  ));
+        builder: (context, school) {
+          return FormElementSchoolWidget(
+            values: schoolNames,
+            onDateSelected: (value) {
+              context.read<SignUpBloc>().add(SignUpEvent.changeSchool(value));
+            },
+          );
+        },
+      ));
 
   Widget get _gradeWidget => _getWidgetWithBottomPadding(BlocSelector<SignUpBloc, SignUpState, String?>(
         selector: (state) {
@@ -199,12 +199,20 @@ class SignUpPageFormElementsWidget extends StatelessWidget {
 
   Widget get _confirmWidget => _getWidgetWithBottomPadding(BlocSelector<SignUpBloc, SignUpState, String?>(
         selector: (state) {
-          return state.confirmPassword;
+          return state.password;
         },
-        builder: (context, state) {
-          return FormElementPasswordWidget(
-            onTextChanged: (value) {
-              context.read<SignUpBloc>().add(SignUpEvent.changePassword(value));
+        builder: (context, password) {
+          return BlocSelector<SignUpBloc, SignUpState, String?>(
+            selector: (state) {
+              return state.confirmPassword;
+            },
+            builder: (context, confirmPassword) {
+              return FormElementPasswordWidget(
+                confirmPass: password,
+                onTextChanged: (value) {
+                  context.read<SignUpBloc>().add(SignUpEvent.changePassword(value));
+                },
+              );
             },
           );
         },

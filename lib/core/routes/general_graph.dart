@@ -14,8 +14,14 @@ List<RouteBase> get $generalRoutes => $appRoutes;
 @TypedGoRoute<HomeRoute>(path: homePath)
 @immutable
 final class HomeRoute extends BaseGoRoute {
+  final String token;
+
+  HomeRoute({required this.token});
+
   @override
-  Widget get page => const HomePage();
+  Widget get page => HomePage(
+        token: token,
+      );
 }
 
 @TypedGoRoute<SignUpRoute>(path: signUpPath)
