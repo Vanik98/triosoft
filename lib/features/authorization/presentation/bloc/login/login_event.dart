@@ -8,4 +8,8 @@ sealed class LoginEvent {
   const factory LoginEvent.initial() = LoginEventInitialEvent;
 
   const factory LoginEvent.registerUser(AddUserRequest addUserRequest) = LoginEventRegisterUserEvent;
+
+  const factory LoginEvent.logOutUser() = LoginEventLogOutEvent;
+
+  const factory LoginEvent.getToken() = LoginEventGetTokenEvent;
 }

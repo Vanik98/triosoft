@@ -9,7 +9,6 @@ import 'package:triosoft/features/authorization/presentation/bloc/sign_up_bloc/s
 import 'package:triosoft/features/authorization/presentation/widgets/sign_up_bottom_widget.dart';
 import 'package:triosoft/generated/locale_keys.g.dart';
 
-import '../../../../di/dependency_injection.dart';
 import '../../../language/presentation/widgets/language_widget.dart';
 import '../widgets/sign_up_form_elements_widget.dart';
 import '../widgets/sign_up_header_widget.dart';
@@ -19,17 +18,14 @@ class SignUpPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (context) => LoginBloc(locator.get(), locator.get())),
-        BlocProvider(create: (context) => SignUpBloc()),
-      ],
+    return BlocProvider(
+      create: (context) => SignUpBloc(),
       child: MultiBlocListener(
         listeners: [
           BlocListener<LoginBloc, LoginState>(
             listenWhen: (oldState, newState) => newState.token != null && newState.token != oldState.token,
             listener: (context, state) {
-              HomeRoute(token: state.token!).push(context);
+              HomeRoute().push(context);
             },
           ),
           BlocListener<LoginBloc, LoginState>(

@@ -1,13 +1,13 @@
 part of 'profile_bloc.dart';
 
 class ProfileState {
-  bool? fullName;
+  String? fullName;
 
   ProfileState._({this.fullName});
 
   factory ProfileState.initial() => ProfileState._();
 
-  ProfileState copyWith({bool? fullName}) {
+  ProfileState copyWith({String? fullName}) {
     return ProfileState._(
       fullName: fullName ?? this.fullName,
     );

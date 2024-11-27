@@ -18,15 +18,10 @@ RouteBase get $homeRoute => GoRouteData.$route(
     );
 
 extension $HomeRouteExtension on HomeRoute {
-  static HomeRoute _fromState(GoRouterState state) => HomeRoute(
-        token: state.uri.queryParameters['token']!,
-      );
+  static HomeRoute _fromState(GoRouterState state) => HomeRoute();
 
   String get location => GoRouteData.$location(
         '/home',
-        queryParams: {
-          'token': token,
-        },
       );
 
   void go(BuildContext context) => context.go(location);

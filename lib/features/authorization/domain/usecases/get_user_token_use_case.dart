@@ -1,4 +1,3 @@
-
 import '../repository/authorization_repository.dart';
 
 class GetUserTokenUseCase {
@@ -6,7 +5,7 @@ class GetUserTokenUseCase {
 
   GetUserTokenUseCase(this.authorizationRepository);
 
-  String? execute() {
-    return authorizationRepository.getToken();
+  String execute() {
+    return authorizationRepository.getToken() ?? '';
   }
 }
