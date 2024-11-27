@@ -11,8 +11,7 @@ part of 'form_search_event.dart';
 
 T _$identity<T>(T value) => value;
 
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+final _privateConstructorUsedError = UnsupportedError('It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$FormSearchEvent {
@@ -23,6 +22,7 @@ mixin _$FormSearchEvent {
     required TResult Function(String text) search,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
@@ -38,6 +38,7 @@ mixin _$FormSearchEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(FormSearchInitialEvent value) initial,
@@ -45,6 +46,7 @@ mixin _$FormSearchEvent {
     required TResult Function(FormSearchSearchEvent value) search,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(FormSearchInitialEvent value)? initial,
@@ -64,19 +66,16 @@ mixin _$FormSearchEvent {
 
 /// @nodoc
 abstract class $FormSearchEventCopyWith<$Res> {
-  factory $FormSearchEventCopyWith(
-          FormSearchEvent value, $Res Function(FormSearchEvent) then) =
-      _$FormSearchEventCopyWithImpl<$Res, FormSearchEvent>;
+  factory $FormSearchEventCopyWith(FormSearchEvent value, $Res Function(FormSearchEvent) then) = _$FormSearchEventCopyWithImpl<$Res, FormSearchEvent>;
 }
 
 /// @nodoc
-class _$FormSearchEventCopyWithImpl<$Res, $Val extends FormSearchEvent>
-    implements $FormSearchEventCopyWith<$Res> {
+class _$FormSearchEventCopyWithImpl<$Res, $Val extends FormSearchEvent> implements $FormSearchEventCopyWith<$Res> {
   _$FormSearchEventCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
+// ignore: unused_field
   final $Val _value;
-  // ignore: unused_field
+// ignore: unused_field
   final $Res Function($Val) _then;
 
   /// Create a copy of FormSearchEvent
@@ -85,20 +84,12 @@ class _$FormSearchEventCopyWithImpl<$Res, $Val extends FormSearchEvent>
 
 /// @nodoc
 abstract class _$$FormSearchInitialEventImplCopyWith<$Res> {
-  factory _$$FormSearchInitialEventImplCopyWith(
-          _$FormSearchInitialEventImpl value,
-          $Res Function(_$FormSearchInitialEventImpl) then) =
-      __$$FormSearchInitialEventImplCopyWithImpl<$Res>;
+  factory _$$FormSearchInitialEventImplCopyWith(_$FormSearchInitialEventImpl value, $Res Function(_$FormSearchInitialEventImpl) then) = __$$FormSearchInitialEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$FormSearchInitialEventImplCopyWithImpl<$Res>
-    extends _$FormSearchEventCopyWithImpl<$Res, _$FormSearchInitialEventImpl>
-    implements _$$FormSearchInitialEventImplCopyWith<$Res> {
-  __$$FormSearchInitialEventImplCopyWithImpl(
-      _$FormSearchInitialEventImpl _value,
-      $Res Function(_$FormSearchInitialEventImpl) _then)
-      : super(_value, _then);
+class __$$FormSearchInitialEventImplCopyWithImpl<$Res> extends _$FormSearchEventCopyWithImpl<$Res, _$FormSearchInitialEventImpl> implements _$$FormSearchInitialEventImplCopyWith<$Res> {
+  __$$FormSearchInitialEventImplCopyWithImpl(_$FormSearchInitialEventImpl _value, $Res Function(_$FormSearchInitialEventImpl) _then) : super(_value, _then);
 
   /// Create a copy of FormSearchEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -116,9 +107,7 @@ class _$FormSearchInitialEventImpl implements FormSearchInitialEvent {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FormSearchInitialEventImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$FormSearchInitialEventImpl);
   }
 
   @override
@@ -199,22 +188,14 @@ abstract class FormSearchInitialEvent implements FormSearchEvent {
 
 /// @nodoc
 abstract class _$$FormSearchSetListEventImplCopyWith<$Res> {
-  factory _$$FormSearchSetListEventImplCopyWith(
-          _$FormSearchSetListEventImpl value,
-          $Res Function(_$FormSearchSetListEventImpl) then) =
-      __$$FormSearchSetListEventImplCopyWithImpl<$Res>;
+  factory _$$FormSearchSetListEventImplCopyWith(_$FormSearchSetListEventImpl value, $Res Function(_$FormSearchSetListEventImpl) then) = __$$FormSearchSetListEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<String> list});
 }
 
 /// @nodoc
-class __$$FormSearchSetListEventImplCopyWithImpl<$Res>
-    extends _$FormSearchEventCopyWithImpl<$Res, _$FormSearchSetListEventImpl>
-    implements _$$FormSearchSetListEventImplCopyWith<$Res> {
-  __$$FormSearchSetListEventImplCopyWithImpl(
-      _$FormSearchSetListEventImpl _value,
-      $Res Function(_$FormSearchSetListEventImpl) _then)
-      : super(_value, _then);
+class __$$FormSearchSetListEventImplCopyWithImpl<$Res> extends _$FormSearchEventCopyWithImpl<$Res, _$FormSearchSetListEventImpl> implements _$$FormSearchSetListEventImplCopyWith<$Res> {
+  __$$FormSearchSetListEventImplCopyWithImpl(_$FormSearchSetListEventImpl _value, $Res Function(_$FormSearchSetListEventImpl) _then) : super(_value, _then);
 
   /// Create a copy of FormSearchEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -241,7 +222,7 @@ class _$FormSearchSetListEventImpl implements FormSearchSetListEvent {
   @override
   List<String> get list {
     if (_list is EqualUnmodifiableListView) return _list;
-    // ignore: implicit_dynamic_type
+// ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_list);
   }
 
@@ -252,24 +233,18 @@ class _$FormSearchSetListEventImpl implements FormSearchSetListEvent {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FormSearchSetListEventImpl &&
-            const DeepCollectionEquality().equals(other._list, _list));
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$FormSearchSetListEventImpl && const DeepCollectionEquality().equals(other._list, _list));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_list));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_list));
 
   /// Create a copy of FormSearchEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$FormSearchSetListEventImplCopyWith<_$FormSearchSetListEventImpl>
-      get copyWith => __$$FormSearchSetListEventImplCopyWithImpl<
-          _$FormSearchSetListEventImpl>(this, _$identity);
+  _$$FormSearchSetListEventImplCopyWith<_$FormSearchSetListEventImpl> get copyWith => __$$FormSearchSetListEventImplCopyWithImpl<_$FormSearchSetListEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -341,35 +316,26 @@ class _$FormSearchSetListEventImpl implements FormSearchSetListEvent {
 }
 
 abstract class FormSearchSetListEvent implements FormSearchEvent {
-  const factory FormSearchSetListEvent(final List<String> list) =
-      _$FormSearchSetListEventImpl;
+  const factory FormSearchSetListEvent(final List<String> list) = _$FormSearchSetListEventImpl;
 
   List<String> get list;
 
   /// Create a copy of FormSearchEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$FormSearchSetListEventImplCopyWith<_$FormSearchSetListEventImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$FormSearchSetListEventImplCopyWith<_$FormSearchSetListEventImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$FormSearchSearchEventImplCopyWith<$Res> {
-  factory _$$FormSearchSearchEventImplCopyWith(
-          _$FormSearchSearchEventImpl value,
-          $Res Function(_$FormSearchSearchEventImpl) then) =
-      __$$FormSearchSearchEventImplCopyWithImpl<$Res>;
+  factory _$$FormSearchSearchEventImplCopyWith(_$FormSearchSearchEventImpl value, $Res Function(_$FormSearchSearchEventImpl) then) = __$$FormSearchSearchEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String text});
 }
 
 /// @nodoc
-class __$$FormSearchSearchEventImplCopyWithImpl<$Res>
-    extends _$FormSearchEventCopyWithImpl<$Res, _$FormSearchSearchEventImpl>
-    implements _$$FormSearchSearchEventImplCopyWith<$Res> {
-  __$$FormSearchSearchEventImplCopyWithImpl(_$FormSearchSearchEventImpl _value,
-      $Res Function(_$FormSearchSearchEventImpl) _then)
-      : super(_value, _then);
+class __$$FormSearchSearchEventImplCopyWithImpl<$Res> extends _$FormSearchEventCopyWithImpl<$Res, _$FormSearchSearchEventImpl> implements _$$FormSearchSearchEventImplCopyWith<$Res> {
+  __$$FormSearchSearchEventImplCopyWithImpl(_$FormSearchSearchEventImpl _value, $Res Function(_$FormSearchSearchEventImpl) _then) : super(_value, _then);
 
   /// Create a copy of FormSearchEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -402,10 +368,7 @@ class _$FormSearchSearchEventImpl implements FormSearchSearchEvent {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FormSearchSearchEventImpl &&
-            (identical(other.text, text) || other.text == text));
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$FormSearchSearchEventImpl && (identical(other.text, text) || other.text == text));
   }
 
   @override
@@ -416,9 +379,7 @@ class _$FormSearchSearchEventImpl implements FormSearchSearchEvent {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$FormSearchSearchEventImplCopyWith<_$FormSearchSearchEventImpl>
-      get copyWith => __$$FormSearchSearchEventImplCopyWithImpl<
-          _$FormSearchSearchEventImpl>(this, _$identity);
+  _$$FormSearchSearchEventImplCopyWith<_$FormSearchSearchEventImpl> get copyWith => __$$FormSearchSearchEventImplCopyWithImpl<_$FormSearchSearchEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -490,14 +451,12 @@ class _$FormSearchSearchEventImpl implements FormSearchSearchEvent {
 }
 
 abstract class FormSearchSearchEvent implements FormSearchEvent {
-  const factory FormSearchSearchEvent(final String text) =
-      _$FormSearchSearchEventImpl;
+  const factory FormSearchSearchEvent(final String text) = _$FormSearchSearchEventImpl;
 
   String get text;
 
   /// Create a copy of FormSearchEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$FormSearchSearchEventImplCopyWith<_$FormSearchSearchEventImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$FormSearchSearchEventImplCopyWith<_$FormSearchSearchEventImpl> get copyWith => throw _privateConstructorUsedError;
 }

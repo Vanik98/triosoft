@@ -9,9 +9,9 @@ import '../bloc/form_search_bloc.dart';
 import '../bloc/form_search_event.dart';
 
 class FormElementSubjectWidget extends StatelessWidget {
-  const FormElementSubjectWidget({super.key, required this.values, required this.onDateSelected, required this.scrollController, this.initialValues});
+  const FormElementSubjectWidget({super.key, required this.values, required this.onSelected, required this.scrollController, this.initialValues});
 
-  final Function(List<String>) onDateSelected;
+  final Function(List<String>) onSelected;
   final List<String> values;
   final ScrollController scrollController;
   final List<String>? initialValues;
@@ -26,9 +26,9 @@ class FormElementSubjectWidget extends StatelessWidget {
             onSearchChanged: (v) {
               context.read<FormSearchBloc>().add(FormSearchEvent.search(v));
             },
-            onDateSelected: (v) {},
-            onChoose: (v){
-              onDateSelected(v);
+            onSelected: (v) {},
+            onChoose: (v) {
+              onSelected(v);
             },
             initialValue: initialValues?.join(", "),
             formElements: _createFormElements(state.filteredTextList),

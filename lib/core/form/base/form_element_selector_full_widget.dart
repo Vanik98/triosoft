@@ -9,7 +9,7 @@ import '../base/form_selector_extra_widget.dart';
 class FormElementSelectorFullWidget<T> extends StatefulWidget {
   const FormElementSelectorFullWidget({
     super.key,
-    required this.onDateSelected,
+    required this.onSelected,
     this.initialValue,
     required this.formElements,
     required this.labelText,
@@ -20,7 +20,7 @@ class FormElementSelectorFullWidget<T> extends StatefulWidget {
     this.onChoose,
   });
 
-  final Function(T) onDateSelected;
+  final Function(T) onSelected;
   final Function(List<T> data)? onChoose;
   final List<FormElement<T>> formElements;
   final String? initialValue;
@@ -84,7 +84,7 @@ class _FormElementSelectorFullWidgetState<T> extends State<FormElementSelectorFu
                   _textEditingController.text = element.title;
                   isShow = false;
                 });
-                widget.onDateSelected(element.data);
+                widget.onSelected(element.data);
               },
               onChoose: (List<FormElement<T>> fList) {
                 List<String> titles = fList.map((e) => e.title).toList();

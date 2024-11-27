@@ -138,7 +138,7 @@ class SignUpPageFormElementsWidget extends StatelessWidget {
         builder: (context, city) {
           return FormElementCityWidget(
             values: cityNames,
-            onDateSelected: (value) {
+            onSelected: (value) {
               context.read<SignUpBloc>().add(SignUpEvent.changeCity(value));
             },
             scrollController: scrollController,
@@ -153,7 +153,7 @@ class SignUpPageFormElementsWidget extends StatelessWidget {
         builder: (context, school) {
           return FormElementSchoolWidget(
             values: schoolNames,
-            onDateSelected: (value) {
+            onSelected: (value) {
               context.read<SignUpBloc>().add(SignUpEvent.changeSchool(value));
             },
             scrollController: scrollController,
@@ -168,7 +168,7 @@ class SignUpPageFormElementsWidget extends StatelessWidget {
         builder: (context, grades) {
           return FormElementGradeWidget(
             values: gradeNames,
-            onDateSelected: (values) {
+            onSelected: (values) {
               context.read<SignUpBloc>().add(SignUpEvent.changeGrade(values));
             },
             scrollController: scrollController,
@@ -184,7 +184,7 @@ class SignUpPageFormElementsWidget extends StatelessWidget {
         builder: (context, subjects) {
           return FormElementSubjectWidget(
             values: subjectNames,
-            onDateSelected: (values) {
+            onSelected: (values) {
               context.read<SignUpBloc>().add(SignUpEvent.changeSubject(values));
             },
             scrollController: scrollController,
@@ -218,6 +218,7 @@ class SignUpPageFormElementsWidget extends StatelessWidget {
             },
             builder: (context, confirmPassword) {
               return FormElementPasswordWidget(
+                labelText: LocaleKeys.confirm_password.tr(),
                 confirmPass: password,
                 onTextChanged: (value) {
                   context.read<SignUpBloc>().add(SignUpEvent.changePassword(value));

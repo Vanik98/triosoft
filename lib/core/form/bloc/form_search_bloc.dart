@@ -11,7 +11,7 @@ class FormSearchBloc extends Bloc<FormSearchEvent, FormSearchState> {
   }
 
   void _setList(FormSearchSetListEvent event, Emitter<FormSearchState> emitter) {
-    emitter(state.copyWith(list: event.list,filteredTextList: event.list));
+    emitter(state.copyWith(list: event.list, filteredTextList: event.list));
   }
 
   void _search(FormSearchSearchEvent event, Emitter<FormSearchState> emitter) {

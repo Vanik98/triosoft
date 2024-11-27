@@ -82,7 +82,7 @@ class FormElementExtraWidget<T> extends StatelessWidget {
                                     }
                                     if (elements[index].isChecked == false) {
                                       chosenElements.add(elements[index]..isChecked = true);
-                                    }else{
+                                    } else {
                                       elements[index].isChecked = false;
                                     }
                                     if (onChoose != null) onChoose!(chosenElements);

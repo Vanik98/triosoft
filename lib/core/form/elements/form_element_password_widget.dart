@@ -52,7 +52,7 @@ class _FormElementPasswordWidgetState extends State<FormElementPasswordWidget> {
           icon: Icon(obscureText ? Icons.visibility_off : Icons.visibility)),
       obscureText: obscureText,
       controller: textEditingController,
-      labelText: widget.labelText ?? (widget.confirmPass != null ? LocaleKeys.confirm_password.tr() : LocaleKeys.password.tr()),
+      labelText: widget.labelText ??  LocaleKeys.password.tr(),
       onTextChanged: widget.onTextChanged,
       onFocusChanged: widget.onFocusChanged,
       validator: (value) {

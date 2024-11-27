@@ -47,7 +47,8 @@ class ValidatorTextFormField extends StatefulWidget {
     this.textColor,
     this.inputFormatters,
     this.maxLines,
-    this.maxLength, this.isFixLabel,
+    this.maxLength,
+    this.isFixLabel,
   });
 
   @override
@@ -91,7 +92,7 @@ class ValidatorTextFormFieldState extends State<ValidatorTextFormField> {
       keyboardType: widget.textInputType,
       inputFormatters: widget.inputFormatters,
       decoration: InputDecoration(
-        floatingLabelBehavior: widget.isFixLabel==true ?FloatingLabelBehavior.always:null,
+        floatingLabelBehavior: widget.isFixLabel == true ? FloatingLabelBehavior.always : null,
         suffixIcon: widget.suffixIcon,
         labelStyle: easyTextFormFieldLabelStyle(),
         fillColor: widget.enable ? widget.enableBackgroundColor : widget.disableBackgroundColor,

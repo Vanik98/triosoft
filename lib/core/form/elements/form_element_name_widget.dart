@@ -10,8 +10,7 @@ class FormElementNameWidget extends StatefulWidget {
   final String? initialValue;
   final String? labelText;
 
-  const FormElementNameWidget(
-      {super.key, this.onTextChanged, this.onFocusChanged, this.initialValue, this.labelText});
+  const FormElementNameWidget({super.key, this.onTextChanged, this.onFocusChanged, this.initialValue, this.labelText});
 
   @override
   State<FormElementNameWidget> createState() => _FormElementNameWidgetState();

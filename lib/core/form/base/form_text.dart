@@ -39,5 +39,4 @@ class FormText extends ValidatorTextFormField {
 
   @override
   Color? get disableBackgroundColor => Colors.green.withOpacity(0.1);
-
 }

@@ -20,7 +20,7 @@ class FormElementRegionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FormElementSelectorFullWidget(
-      onDateSelected: (v) {
+      onSelected: (v) {
         onDateSelected(v);
       },
       formElements: _createFormElements(),

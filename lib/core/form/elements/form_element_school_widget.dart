@@ -9,9 +9,9 @@ import '../bloc/form_search_bloc.dart';
 import '../bloc/form_search_event.dart';
 
 class FormElementSchoolWidget extends StatelessWidget {
-  const FormElementSchoolWidget({super.key, required this.values, required this.onDateSelected, required this.scrollController});
+  const FormElementSchoolWidget({super.key, required this.values, required this.onSelected, required this.scrollController});
 
-  final Function(String) onDateSelected;
+  final Function(String) onSelected;
   final List<String> values;
   final ScrollController scrollController;
 
@@ -25,12 +25,13 @@ class FormElementSchoolWidget extends StatelessWidget {
             onSearchChanged: (v) {
               context.read<FormSearchBloc>().add(FormSearchEvent.search(v));
             },
-            onDateSelected: (v) {
-              onDateSelected(v);
+            onSelected: (v) {
+              onSelected(v);
             },
             formElements: _createFormElements(state.filteredTextList),
             labelText: LocaleKeys.school.tr(),
-            isHaveSearch: true, scrollController: scrollController,
+            isHaveSearch: true,
+            scrollController: scrollController,
           );
         },
       ),
