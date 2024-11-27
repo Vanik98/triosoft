@@ -48,11 +48,11 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   }
 
   void _changeSubject(SignUpChangeSubjectEvent event, Emitter<SignUpState> emitter) async {
-    emitter(state.copyWith(subject: event.subject));
+    emitter(state.copyWith(subjects: event.subjects));
   }
 
   void _changeGrade(SignUpChangeGradeEvent event, Emitter<SignUpState> emitter) async {
-    emitter(state.copyWith(grade: event.grade));
+    emitter(state.copyWith(grades: event.grade));
   }
 
   void _changePassword(SignUpChangePasswordEvent event, Emitter<SignUpState> emitter) async {

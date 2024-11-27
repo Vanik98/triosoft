@@ -9,9 +9,14 @@ import '../bloc/form_search_bloc.dart';
 import '../bloc/form_search_event.dart';
 
 class FormElementGradeWidget extends StatelessWidget {
-  const FormElementGradeWidget({super.key, required this.values, required this.onDateSelected, required this.scrollController});
+  const FormElementGradeWidget({
+    super.key,
+    required this.values,
+    required this.onDateSelected,
+    required this.scrollController,
+  });
 
-  final Function(String) onDateSelected;
+  final Function(List<String>) onDateSelected;
   final List<String> values;
   final ScrollController scrollController;
 
@@ -21,11 +26,12 @@ class FormElementGradeWidget extends StatelessWidget {
       create: (context) => FormSearchBloc()..add(FormSearchEvent.setList(values)),
       child: BlocBuilder<FormSearchBloc, FormSearchState>(
         builder: (context, state) {
-          return FormElementSelectorFullWidget(
+          return FormElementSelectorFullWidget<String>(
             onSearchChanged: (v) {
               context.read<FormSearchBloc>().add(FormSearchEvent.search(v));
             },
-            onDateSelected: (v) {
+            onDateSelected: (v) {},
+            onChoose: (v) {
               onDateSelected(v);
             },
             formElements: _createFormElements(state.filteredTextList),
@@ -37,10 +43,10 @@ class FormElementGradeWidget extends StatelessWidget {
     );
   }
 
-  List<FormElement> _createFormElements(List<String> list) {
-    final List<FormElement> formElements = [];
+  List<FormElement<String>> _createFormElements(List<String> list) {
+    final List<FormElement<String>> formElements = [];
     for (var v in list) {
-      formElements.add(FormElement(data: v, title: v));
+      formElements.add(FormElement(data: v, title: v,isChecked: false));
     }
     return formElements;
   }

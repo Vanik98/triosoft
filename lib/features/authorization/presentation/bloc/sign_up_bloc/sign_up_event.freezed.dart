@@ -26,8 +26,8 @@ mixin _$SignUpEvent {
     required TResult Function(String? region) changeRegion,
     required TResult Function(String? city) changeCity,
     required TResult Function(String? school) changeSchool,
-    required TResult Function(String? subject) changeSubject,
-    required TResult Function(String? grade) changeGrade,
+    required TResult Function(List<String>? subjects) changeSubject,
+    required TResult Function(List<String>? grade) changeGrade,
     required TResult Function(String? password) changePassword,
     required TResult Function(String? confirmPassword) changeConfirmPassword,
   }) =>
@@ -42,8 +42,8 @@ mixin _$SignUpEvent {
     TResult? Function(String? region)? changeRegion,
     TResult? Function(String? city)? changeCity,
     TResult? Function(String? school)? changeSchool,
-    TResult? Function(String? subject)? changeSubject,
-    TResult? Function(String? grade)? changeGrade,
+    TResult? Function(List<String>? subjects)? changeSubject,
+    TResult? Function(List<String>? grade)? changeGrade,
     TResult? Function(String? password)? changePassword,
     TResult? Function(String? confirmPassword)? changeConfirmPassword,
   }) =>
@@ -58,8 +58,8 @@ mixin _$SignUpEvent {
     TResult Function(String? region)? changeRegion,
     TResult Function(String? city)? changeCity,
     TResult Function(String? school)? changeSchool,
-    TResult Function(String? subject)? changeSubject,
-    TResult Function(String? grade)? changeGrade,
+    TResult Function(List<String>? subjects)? changeSubject,
+    TResult Function(List<String>? grade)? changeGrade,
     TResult Function(String? password)? changePassword,
     TResult Function(String? confirmPassword)? changeConfirmPassword,
     required TResult orElse(),
@@ -190,8 +190,8 @@ class _$SignUpInitialEventImpl implements SignUpInitialEvent {
     required TResult Function(String? region) changeRegion,
     required TResult Function(String? city) changeCity,
     required TResult Function(String? school) changeSchool,
-    required TResult Function(String? subject) changeSubject,
-    required TResult Function(String? grade) changeGrade,
+    required TResult Function(List<String>? subjects) changeSubject,
+    required TResult Function(List<String>? grade) changeGrade,
     required TResult Function(String? password) changePassword,
     required TResult Function(String? confirmPassword) changeConfirmPassword,
   }) {
@@ -209,8 +209,8 @@ class _$SignUpInitialEventImpl implements SignUpInitialEvent {
     TResult? Function(String? region)? changeRegion,
     TResult? Function(String? city)? changeCity,
     TResult? Function(String? school)? changeSchool,
-    TResult? Function(String? subject)? changeSubject,
-    TResult? Function(String? grade)? changeGrade,
+    TResult? Function(List<String>? subjects)? changeSubject,
+    TResult? Function(List<String>? grade)? changeGrade,
     TResult? Function(String? password)? changePassword,
     TResult? Function(String? confirmPassword)? changeConfirmPassword,
   }) {
@@ -228,8 +228,8 @@ class _$SignUpInitialEventImpl implements SignUpInitialEvent {
     TResult Function(String? region)? changeRegion,
     TResult Function(String? city)? changeCity,
     TResult Function(String? school)? changeSchool,
-    TResult Function(String? subject)? changeSubject,
-    TResult Function(String? grade)? changeGrade,
+    TResult Function(List<String>? subjects)? changeSubject,
+    TResult Function(List<String>? grade)? changeGrade,
     TResult Function(String? password)? changePassword,
     TResult Function(String? confirmPassword)? changeConfirmPassword,
     required TResult orElse(),
@@ -388,8 +388,8 @@ class _$SignUpChangeNameEventImpl implements SignUpChangeNameEvent {
     required TResult Function(String? region) changeRegion,
     required TResult Function(String? city) changeCity,
     required TResult Function(String? school) changeSchool,
-    required TResult Function(String? subject) changeSubject,
-    required TResult Function(String? grade) changeGrade,
+    required TResult Function(List<String>? subjects) changeSubject,
+    required TResult Function(List<String>? grade) changeGrade,
     required TResult Function(String? password) changePassword,
     required TResult Function(String? confirmPassword) changeConfirmPassword,
   }) {
@@ -407,8 +407,8 @@ class _$SignUpChangeNameEventImpl implements SignUpChangeNameEvent {
     TResult? Function(String? region)? changeRegion,
     TResult? Function(String? city)? changeCity,
     TResult? Function(String? school)? changeSchool,
-    TResult? Function(String? subject)? changeSubject,
-    TResult? Function(String? grade)? changeGrade,
+    TResult? Function(List<String>? subjects)? changeSubject,
+    TResult? Function(List<String>? grade)? changeGrade,
     TResult? Function(String? password)? changePassword,
     TResult? Function(String? confirmPassword)? changeConfirmPassword,
   }) {
@@ -426,8 +426,8 @@ class _$SignUpChangeNameEventImpl implements SignUpChangeNameEvent {
     TResult Function(String? region)? changeRegion,
     TResult Function(String? city)? changeCity,
     TResult Function(String? school)? changeSchool,
-    TResult Function(String? subject)? changeSubject,
-    TResult Function(String? grade)? changeGrade,
+    TResult Function(List<String>? subjects)? changeSubject,
+    TResult Function(List<String>? grade)? changeGrade,
     TResult Function(String? password)? changePassword,
     TResult Function(String? confirmPassword)? changeConfirmPassword,
     required TResult orElse(),
@@ -597,8 +597,8 @@ class _$SignUpChangeLastNameEventImpl implements SignUpChangeLastNameEvent {
     required TResult Function(String? region) changeRegion,
     required TResult Function(String? city) changeCity,
     required TResult Function(String? school) changeSchool,
-    required TResult Function(String? subject) changeSubject,
-    required TResult Function(String? grade) changeGrade,
+    required TResult Function(List<String>? subjects) changeSubject,
+    required TResult Function(List<String>? grade) changeGrade,
     required TResult Function(String? password) changePassword,
     required TResult Function(String? confirmPassword) changeConfirmPassword,
   }) {
@@ -616,8 +616,8 @@ class _$SignUpChangeLastNameEventImpl implements SignUpChangeLastNameEvent {
     TResult? Function(String? region)? changeRegion,
     TResult? Function(String? city)? changeCity,
     TResult? Function(String? school)? changeSchool,
-    TResult? Function(String? subject)? changeSubject,
-    TResult? Function(String? grade)? changeGrade,
+    TResult? Function(List<String>? subjects)? changeSubject,
+    TResult? Function(List<String>? grade)? changeGrade,
     TResult? Function(String? password)? changePassword,
     TResult? Function(String? confirmPassword)? changeConfirmPassword,
   }) {
@@ -635,8 +635,8 @@ class _$SignUpChangeLastNameEventImpl implements SignUpChangeLastNameEvent {
     TResult Function(String? region)? changeRegion,
     TResult Function(String? city)? changeCity,
     TResult Function(String? school)? changeSchool,
-    TResult Function(String? subject)? changeSubject,
-    TResult Function(String? grade)? changeGrade,
+    TResult Function(List<String>? subjects)? changeSubject,
+    TResult Function(List<String>? grade)? changeGrade,
     TResult Function(String? password)? changePassword,
     TResult Function(String? confirmPassword)? changeConfirmPassword,
     required TResult orElse(),
@@ -805,8 +805,8 @@ class _$SignUpChangeEmailEventImpl implements SignUpChangeEmailEvent {
     required TResult Function(String? region) changeRegion,
     required TResult Function(String? city) changeCity,
     required TResult Function(String? school) changeSchool,
-    required TResult Function(String? subject) changeSubject,
-    required TResult Function(String? grade) changeGrade,
+    required TResult Function(List<String>? subjects) changeSubject,
+    required TResult Function(List<String>? grade) changeGrade,
     required TResult Function(String? password) changePassword,
     required TResult Function(String? confirmPassword) changeConfirmPassword,
   }) {
@@ -824,8 +824,8 @@ class _$SignUpChangeEmailEventImpl implements SignUpChangeEmailEvent {
     TResult? Function(String? region)? changeRegion,
     TResult? Function(String? city)? changeCity,
     TResult? Function(String? school)? changeSchool,
-    TResult? Function(String? subject)? changeSubject,
-    TResult? Function(String? grade)? changeGrade,
+    TResult? Function(List<String>? subjects)? changeSubject,
+    TResult? Function(List<String>? grade)? changeGrade,
     TResult? Function(String? password)? changePassword,
     TResult? Function(String? confirmPassword)? changeConfirmPassword,
   }) {
@@ -843,8 +843,8 @@ class _$SignUpChangeEmailEventImpl implements SignUpChangeEmailEvent {
     TResult Function(String? region)? changeRegion,
     TResult Function(String? city)? changeCity,
     TResult Function(String? school)? changeSchool,
-    TResult Function(String? subject)? changeSubject,
-    TResult Function(String? grade)? changeGrade,
+    TResult Function(List<String>? subjects)? changeSubject,
+    TResult Function(List<String>? grade)? changeGrade,
     TResult Function(String? password)? changePassword,
     TResult Function(String? confirmPassword)? changeConfirmPassword,
     required TResult orElse(),
@@ -1016,8 +1016,8 @@ class _$SignUpChangePhoneNumberEventImpl
     required TResult Function(String? region) changeRegion,
     required TResult Function(String? city) changeCity,
     required TResult Function(String? school) changeSchool,
-    required TResult Function(String? subject) changeSubject,
-    required TResult Function(String? grade) changeGrade,
+    required TResult Function(List<String>? subjects) changeSubject,
+    required TResult Function(List<String>? grade) changeGrade,
     required TResult Function(String? password) changePassword,
     required TResult Function(String? confirmPassword) changeConfirmPassword,
   }) {
@@ -1035,8 +1035,8 @@ class _$SignUpChangePhoneNumberEventImpl
     TResult? Function(String? region)? changeRegion,
     TResult? Function(String? city)? changeCity,
     TResult? Function(String? school)? changeSchool,
-    TResult? Function(String? subject)? changeSubject,
-    TResult? Function(String? grade)? changeGrade,
+    TResult? Function(List<String>? subjects)? changeSubject,
+    TResult? Function(List<String>? grade)? changeGrade,
     TResult? Function(String? password)? changePassword,
     TResult? Function(String? confirmPassword)? changeConfirmPassword,
   }) {
@@ -1054,8 +1054,8 @@ class _$SignUpChangePhoneNumberEventImpl
     TResult Function(String? region)? changeRegion,
     TResult Function(String? city)? changeCity,
     TResult Function(String? school)? changeSchool,
-    TResult Function(String? subject)? changeSubject,
-    TResult Function(String? grade)? changeGrade,
+    TResult Function(List<String>? subjects)? changeSubject,
+    TResult Function(List<String>? grade)? changeGrade,
     TResult Function(String? password)? changePassword,
     TResult Function(String? confirmPassword)? changeConfirmPassword,
     required TResult orElse(),
@@ -1225,8 +1225,8 @@ class _$SignUpChangeRegionEventImpl implements SignUpChangeRegionEvent {
     required TResult Function(String? region) changeRegion,
     required TResult Function(String? city) changeCity,
     required TResult Function(String? school) changeSchool,
-    required TResult Function(String? subject) changeSubject,
-    required TResult Function(String? grade) changeGrade,
+    required TResult Function(List<String>? subjects) changeSubject,
+    required TResult Function(List<String>? grade) changeGrade,
     required TResult Function(String? password) changePassword,
     required TResult Function(String? confirmPassword) changeConfirmPassword,
   }) {
@@ -1244,8 +1244,8 @@ class _$SignUpChangeRegionEventImpl implements SignUpChangeRegionEvent {
     TResult? Function(String? region)? changeRegion,
     TResult? Function(String? city)? changeCity,
     TResult? Function(String? school)? changeSchool,
-    TResult? Function(String? subject)? changeSubject,
-    TResult? Function(String? grade)? changeGrade,
+    TResult? Function(List<String>? subjects)? changeSubject,
+    TResult? Function(List<String>? grade)? changeGrade,
     TResult? Function(String? password)? changePassword,
     TResult? Function(String? confirmPassword)? changeConfirmPassword,
   }) {
@@ -1263,8 +1263,8 @@ class _$SignUpChangeRegionEventImpl implements SignUpChangeRegionEvent {
     TResult Function(String? region)? changeRegion,
     TResult Function(String? city)? changeCity,
     TResult Function(String? school)? changeSchool,
-    TResult Function(String? subject)? changeSubject,
-    TResult Function(String? grade)? changeGrade,
+    TResult Function(List<String>? subjects)? changeSubject,
+    TResult Function(List<String>? grade)? changeGrade,
     TResult Function(String? password)? changePassword,
     TResult Function(String? confirmPassword)? changeConfirmPassword,
     required TResult orElse(),
@@ -1432,8 +1432,8 @@ class _$SignUpChangeCityEventImpl implements SignUpChangeCityEvent {
     required TResult Function(String? region) changeRegion,
     required TResult Function(String? city) changeCity,
     required TResult Function(String? school) changeSchool,
-    required TResult Function(String? subject) changeSubject,
-    required TResult Function(String? grade) changeGrade,
+    required TResult Function(List<String>? subjects) changeSubject,
+    required TResult Function(List<String>? grade) changeGrade,
     required TResult Function(String? password) changePassword,
     required TResult Function(String? confirmPassword) changeConfirmPassword,
   }) {
@@ -1451,8 +1451,8 @@ class _$SignUpChangeCityEventImpl implements SignUpChangeCityEvent {
     TResult? Function(String? region)? changeRegion,
     TResult? Function(String? city)? changeCity,
     TResult? Function(String? school)? changeSchool,
-    TResult? Function(String? subject)? changeSubject,
-    TResult? Function(String? grade)? changeGrade,
+    TResult? Function(List<String>? subjects)? changeSubject,
+    TResult? Function(List<String>? grade)? changeGrade,
     TResult? Function(String? password)? changePassword,
     TResult? Function(String? confirmPassword)? changeConfirmPassword,
   }) {
@@ -1470,8 +1470,8 @@ class _$SignUpChangeCityEventImpl implements SignUpChangeCityEvent {
     TResult Function(String? region)? changeRegion,
     TResult Function(String? city)? changeCity,
     TResult Function(String? school)? changeSchool,
-    TResult Function(String? subject)? changeSubject,
-    TResult Function(String? grade)? changeGrade,
+    TResult Function(List<String>? subjects)? changeSubject,
+    TResult Function(List<String>? grade)? changeGrade,
     TResult Function(String? password)? changePassword,
     TResult Function(String? confirmPassword)? changeConfirmPassword,
     required TResult orElse(),
@@ -1640,8 +1640,8 @@ class _$SignUpChangeSchoolEventImpl implements SignUpChangeSchoolEvent {
     required TResult Function(String? region) changeRegion,
     required TResult Function(String? city) changeCity,
     required TResult Function(String? school) changeSchool,
-    required TResult Function(String? subject) changeSubject,
-    required TResult Function(String? grade) changeGrade,
+    required TResult Function(List<String>? subjects) changeSubject,
+    required TResult Function(List<String>? grade) changeGrade,
     required TResult Function(String? password) changePassword,
     required TResult Function(String? confirmPassword) changeConfirmPassword,
   }) {
@@ -1659,8 +1659,8 @@ class _$SignUpChangeSchoolEventImpl implements SignUpChangeSchoolEvent {
     TResult? Function(String? region)? changeRegion,
     TResult? Function(String? city)? changeCity,
     TResult? Function(String? school)? changeSchool,
-    TResult? Function(String? subject)? changeSubject,
-    TResult? Function(String? grade)? changeGrade,
+    TResult? Function(List<String>? subjects)? changeSubject,
+    TResult? Function(List<String>? grade)? changeGrade,
     TResult? Function(String? password)? changePassword,
     TResult? Function(String? confirmPassword)? changeConfirmPassword,
   }) {
@@ -1678,8 +1678,8 @@ class _$SignUpChangeSchoolEventImpl implements SignUpChangeSchoolEvent {
     TResult Function(String? region)? changeRegion,
     TResult Function(String? city)? changeCity,
     TResult Function(String? school)? changeSchool,
-    TResult Function(String? subject)? changeSubject,
-    TResult Function(String? grade)? changeGrade,
+    TResult Function(List<String>? subjects)? changeSubject,
+    TResult Function(List<String>? grade)? changeGrade,
     TResult Function(String? password)? changePassword,
     TResult Function(String? confirmPassword)? changeConfirmPassword,
     required TResult orElse(),
@@ -1776,7 +1776,7 @@ abstract class _$$SignUpChangeSubjectEventImplCopyWith<$Res> {
           $Res Function(_$SignUpChangeSubjectEventImpl) then) =
       __$$SignUpChangeSubjectEventImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String? subject});
+  $Res call({List<String>? subjects});
 }
 
 /// @nodoc
@@ -1793,13 +1793,13 @@ class __$$SignUpChangeSubjectEventImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? subject = freezed,
+    Object? subjects = freezed,
   }) {
     return _then(_$SignUpChangeSubjectEventImpl(
-      freezed == subject
-          ? _value.subject
-          : subject // ignore: cast_nullable_to_non_nullable
-              as String?,
+      freezed == subjects
+          ? _value._subjects
+          : subjects // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
     ));
   }
 }
@@ -1807,14 +1807,22 @@ class __$$SignUpChangeSubjectEventImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SignUpChangeSubjectEventImpl implements SignUpChangeSubjectEvent {
-  const _$SignUpChangeSubjectEventImpl(this.subject);
+  const _$SignUpChangeSubjectEventImpl(final List<String>? subjects)
+      : _subjects = subjects;
 
+  final List<String>? _subjects;
   @override
-  final String? subject;
+  List<String>? get subjects {
+    final value = _subjects;
+    if (value == null) return null;
+    if (_subjects is EqualUnmodifiableListView) return _subjects;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
-    return 'SignUpEvent.changeSubject(subject: $subject)';
+    return 'SignUpEvent.changeSubject(subjects: $subjects)';
   }
 
   @override
@@ -1822,11 +1830,12 @@ class _$SignUpChangeSubjectEventImpl implements SignUpChangeSubjectEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SignUpChangeSubjectEventImpl &&
-            (identical(other.subject, subject) || other.subject == subject));
+            const DeepCollectionEquality().equals(other._subjects, _subjects));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, subject);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_subjects));
 
   /// Create a copy of SignUpEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -1848,12 +1857,12 @@ class _$SignUpChangeSubjectEventImpl implements SignUpChangeSubjectEvent {
     required TResult Function(String? region) changeRegion,
     required TResult Function(String? city) changeCity,
     required TResult Function(String? school) changeSchool,
-    required TResult Function(String? subject) changeSubject,
-    required TResult Function(String? grade) changeGrade,
+    required TResult Function(List<String>? subjects) changeSubject,
+    required TResult Function(List<String>? grade) changeGrade,
     required TResult Function(String? password) changePassword,
     required TResult Function(String? confirmPassword) changeConfirmPassword,
   }) {
-    return changeSubject(subject);
+    return changeSubject(subjects);
   }
 
   @override
@@ -1867,12 +1876,12 @@ class _$SignUpChangeSubjectEventImpl implements SignUpChangeSubjectEvent {
     TResult? Function(String? region)? changeRegion,
     TResult? Function(String? city)? changeCity,
     TResult? Function(String? school)? changeSchool,
-    TResult? Function(String? subject)? changeSubject,
-    TResult? Function(String? grade)? changeGrade,
+    TResult? Function(List<String>? subjects)? changeSubject,
+    TResult? Function(List<String>? grade)? changeGrade,
     TResult? Function(String? password)? changePassword,
     TResult? Function(String? confirmPassword)? changeConfirmPassword,
   }) {
-    return changeSubject?.call(subject);
+    return changeSubject?.call(subjects);
   }
 
   @override
@@ -1886,14 +1895,14 @@ class _$SignUpChangeSubjectEventImpl implements SignUpChangeSubjectEvent {
     TResult Function(String? region)? changeRegion,
     TResult Function(String? city)? changeCity,
     TResult Function(String? school)? changeSchool,
-    TResult Function(String? subject)? changeSubject,
-    TResult Function(String? grade)? changeGrade,
+    TResult Function(List<String>? subjects)? changeSubject,
+    TResult Function(List<String>? grade)? changeGrade,
     TResult Function(String? password)? changePassword,
     TResult Function(String? confirmPassword)? changeConfirmPassword,
     required TResult orElse(),
   }) {
     if (changeSubject != null) {
-      return changeSubject(subject);
+      return changeSubject(subjects);
     }
     return orElse();
   }
@@ -1965,10 +1974,10 @@ class _$SignUpChangeSubjectEventImpl implements SignUpChangeSubjectEvent {
 }
 
 abstract class SignUpChangeSubjectEvent implements SignUpEvent {
-  const factory SignUpChangeSubjectEvent(final String? subject) =
+  const factory SignUpChangeSubjectEvent(final List<String>? subjects) =
       _$SignUpChangeSubjectEventImpl;
 
-  String? get subject;
+  List<String>? get subjects;
 
   /// Create a copy of SignUpEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -1984,7 +1993,7 @@ abstract class _$$SignUpChangeGradeEventImplCopyWith<$Res> {
           $Res Function(_$SignUpChangeGradeEventImpl) then) =
       __$$SignUpChangeGradeEventImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String? grade});
+  $Res call({List<String>? grade});
 }
 
 /// @nodoc
@@ -2005,9 +2014,9 @@ class __$$SignUpChangeGradeEventImplCopyWithImpl<$Res>
   }) {
     return _then(_$SignUpChangeGradeEventImpl(
       freezed == grade
-          ? _value.grade
+          ? _value._grade
           : grade // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as List<String>?,
     ));
   }
 }
@@ -2015,10 +2024,18 @@ class __$$SignUpChangeGradeEventImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SignUpChangeGradeEventImpl implements SignUpChangeGradeEvent {
-  const _$SignUpChangeGradeEventImpl(this.grade);
+  const _$SignUpChangeGradeEventImpl(final List<String>? grade)
+      : _grade = grade;
 
+  final List<String>? _grade;
   @override
-  final String? grade;
+  List<String>? get grade {
+    final value = _grade;
+    if (value == null) return null;
+    if (_grade is EqualUnmodifiableListView) return _grade;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
@@ -2030,11 +2047,12 @@ class _$SignUpChangeGradeEventImpl implements SignUpChangeGradeEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SignUpChangeGradeEventImpl &&
-            (identical(other.grade, grade) || other.grade == grade));
+            const DeepCollectionEquality().equals(other._grade, _grade));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, grade);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_grade));
 
   /// Create a copy of SignUpEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -2056,8 +2074,8 @@ class _$SignUpChangeGradeEventImpl implements SignUpChangeGradeEvent {
     required TResult Function(String? region) changeRegion,
     required TResult Function(String? city) changeCity,
     required TResult Function(String? school) changeSchool,
-    required TResult Function(String? subject) changeSubject,
-    required TResult Function(String? grade) changeGrade,
+    required TResult Function(List<String>? subjects) changeSubject,
+    required TResult Function(List<String>? grade) changeGrade,
     required TResult Function(String? password) changePassword,
     required TResult Function(String? confirmPassword) changeConfirmPassword,
   }) {
@@ -2075,8 +2093,8 @@ class _$SignUpChangeGradeEventImpl implements SignUpChangeGradeEvent {
     TResult? Function(String? region)? changeRegion,
     TResult? Function(String? city)? changeCity,
     TResult? Function(String? school)? changeSchool,
-    TResult? Function(String? subject)? changeSubject,
-    TResult? Function(String? grade)? changeGrade,
+    TResult? Function(List<String>? subjects)? changeSubject,
+    TResult? Function(List<String>? grade)? changeGrade,
     TResult? Function(String? password)? changePassword,
     TResult? Function(String? confirmPassword)? changeConfirmPassword,
   }) {
@@ -2094,8 +2112,8 @@ class _$SignUpChangeGradeEventImpl implements SignUpChangeGradeEvent {
     TResult Function(String? region)? changeRegion,
     TResult Function(String? city)? changeCity,
     TResult Function(String? school)? changeSchool,
-    TResult Function(String? subject)? changeSubject,
-    TResult Function(String? grade)? changeGrade,
+    TResult Function(List<String>? subjects)? changeSubject,
+    TResult Function(List<String>? grade)? changeGrade,
     TResult Function(String? password)? changePassword,
     TResult Function(String? confirmPassword)? changeConfirmPassword,
     required TResult orElse(),
@@ -2173,10 +2191,10 @@ class _$SignUpChangeGradeEventImpl implements SignUpChangeGradeEvent {
 }
 
 abstract class SignUpChangeGradeEvent implements SignUpEvent {
-  const factory SignUpChangeGradeEvent(final String? grade) =
+  const factory SignUpChangeGradeEvent(final List<String>? grade) =
       _$SignUpChangeGradeEventImpl;
 
-  String? get grade;
+  List<String>? get grade;
 
   /// Create a copy of SignUpEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -2265,8 +2283,8 @@ class _$SignUpChangePasswordEventImpl implements SignUpChangePasswordEvent {
     required TResult Function(String? region) changeRegion,
     required TResult Function(String? city) changeCity,
     required TResult Function(String? school) changeSchool,
-    required TResult Function(String? subject) changeSubject,
-    required TResult Function(String? grade) changeGrade,
+    required TResult Function(List<String>? subjects) changeSubject,
+    required TResult Function(List<String>? grade) changeGrade,
     required TResult Function(String? password) changePassword,
     required TResult Function(String? confirmPassword) changeConfirmPassword,
   }) {
@@ -2284,8 +2302,8 @@ class _$SignUpChangePasswordEventImpl implements SignUpChangePasswordEvent {
     TResult? Function(String? region)? changeRegion,
     TResult? Function(String? city)? changeCity,
     TResult? Function(String? school)? changeSchool,
-    TResult? Function(String? subject)? changeSubject,
-    TResult? Function(String? grade)? changeGrade,
+    TResult? Function(List<String>? subjects)? changeSubject,
+    TResult? Function(List<String>? grade)? changeGrade,
     TResult? Function(String? password)? changePassword,
     TResult? Function(String? confirmPassword)? changeConfirmPassword,
   }) {
@@ -2303,8 +2321,8 @@ class _$SignUpChangePasswordEventImpl implements SignUpChangePasswordEvent {
     TResult Function(String? region)? changeRegion,
     TResult Function(String? city)? changeCity,
     TResult Function(String? school)? changeSchool,
-    TResult Function(String? subject)? changeSubject,
-    TResult Function(String? grade)? changeGrade,
+    TResult Function(List<String>? subjects)? changeSubject,
+    TResult Function(List<String>? grade)? changeGrade,
     TResult Function(String? password)? changePassword,
     TResult Function(String? confirmPassword)? changeConfirmPassword,
     required TResult orElse(),
@@ -2477,8 +2495,8 @@ class _$SignUpChangeConfirmPasswordEventImpl
     required TResult Function(String? region) changeRegion,
     required TResult Function(String? city) changeCity,
     required TResult Function(String? school) changeSchool,
-    required TResult Function(String? subject) changeSubject,
-    required TResult Function(String? grade) changeGrade,
+    required TResult Function(List<String>? subjects) changeSubject,
+    required TResult Function(List<String>? grade) changeGrade,
     required TResult Function(String? password) changePassword,
     required TResult Function(String? confirmPassword) changeConfirmPassword,
   }) {
@@ -2496,8 +2514,8 @@ class _$SignUpChangeConfirmPasswordEventImpl
     TResult? Function(String? region)? changeRegion,
     TResult? Function(String? city)? changeCity,
     TResult? Function(String? school)? changeSchool,
-    TResult? Function(String? subject)? changeSubject,
-    TResult? Function(String? grade)? changeGrade,
+    TResult? Function(List<String>? subjects)? changeSubject,
+    TResult? Function(List<String>? grade)? changeGrade,
     TResult? Function(String? password)? changePassword,
     TResult? Function(String? confirmPassword)? changeConfirmPassword,
   }) {
@@ -2515,8 +2533,8 @@ class _$SignUpChangeConfirmPasswordEventImpl
     TResult Function(String? region)? changeRegion,
     TResult Function(String? city)? changeCity,
     TResult Function(String? school)? changeSchool,
-    TResult Function(String? subject)? changeSubject,
-    TResult Function(String? grade)? changeGrade,
+    TResult Function(List<String>? subjects)? changeSubject,
+    TResult Function(List<String>? grade)? changeGrade,
     TResult Function(String? password)? changePassword,
     TResult Function(String? confirmPassword)? changeConfirmPassword,
     required TResult orElse(),

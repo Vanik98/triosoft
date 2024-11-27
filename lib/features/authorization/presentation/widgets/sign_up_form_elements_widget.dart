@@ -161,32 +161,33 @@ class SignUpPageFormElementsWidget extends StatelessWidget {
         },
       ));
 
-  Widget get _gradeWidget => _getWidgetWithBottomPadding(BlocSelector<SignUpBloc, SignUpState, String?>(
+  Widget get _gradeWidget => _getWidgetWithBottomPadding(BlocSelector<SignUpBloc, SignUpState, List<String>?>(
         selector: (state) {
-          return state.grade;
+          return state.grades;
         },
-        builder: (context, grade) {
+        builder: (context, grades) {
           return FormElementGradeWidget(
             values: gradeNames,
-            onDateSelected: (value) {
-              context.read<SignUpBloc>().add(SignUpEvent.changeGrade(value));
+            onDateSelected: (values) {
+              context.read<SignUpBloc>().add(SignUpEvent.changeGrade(values));
             },
             scrollController: scrollController,
           );
         },
       ));
 
-  Widget get _subjectWidget => _getWidgetWithBottomPadding(BlocSelector<SignUpBloc, SignUpState, String?>(
+  Widget get _subjectWidget => _getWidgetWithBottomPadding(BlocSelector<SignUpBloc, SignUpState, List<String>?>(
         selector: (state) {
-          return state.subject;
+          return state.subjects;
         },
-        builder: (context, subject) {
+        builder: (context, subjects) {
           return FormElementSubjectWidget(
             values: subjectNames,
-            onDateSelected: (value) {
-              context.read<SignUpBloc>().add(SignUpEvent.changeSubject(value));
+            onDateSelected: (values) {
+              context.read<SignUpBloc>().add(SignUpEvent.changeSubject(values));
             },
             scrollController: scrollController,
+            // initialValues: subjects,
           );
         },
       ));

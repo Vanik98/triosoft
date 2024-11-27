@@ -20,9 +20,9 @@ sealed class SignUpEvent {
 
   const factory SignUpEvent.changeSchool(String? school) = SignUpChangeSchoolEvent;
 
-  const factory SignUpEvent.changeSubject(String? subject) = SignUpChangeSubjectEvent;
+  const factory SignUpEvent.changeSubject(List<String>? subjects) = SignUpChangeSubjectEvent;
 
-  const factory SignUpEvent.changeGrade(String? grade) = SignUpChangeGradeEvent;
+  const factory SignUpEvent.changeGrade(List<String>? grade) = SignUpChangeGradeEvent;
 
   const factory SignUpEvent.changePassword(String? password) = SignUpChangePasswordEvent;
 

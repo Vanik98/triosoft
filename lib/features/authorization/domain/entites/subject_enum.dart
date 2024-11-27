@@ -1,12 +1,12 @@
 enum SubjectEnum {
   subject1('subject 1'),
-  subject2('subject 1'),
-  subject3('subject 1'),
-  subject4('subject 1'),
-  subject5('subject 1'),
-  subject6('subject 1'),
-  subject7('subject 1'),
-  subject8('subject 2');
+  subject2('subject 2'),
+  subject3('subject 3'),
+  subject4('subject 4'),
+  subject5('subject 5'),
+  subject6('subject 6'),
+  subject7('subject 7'),
+  subject8('subject 8');
 
   final String name;
 

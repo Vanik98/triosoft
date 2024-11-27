@@ -1,6 +1,7 @@
 class FormElement<T> {
   final T data;
   final String title;
+  bool? isChecked;
 
-  const FormElement({required this.data, required this.title});
+  FormElement({required this.data, required this.title, this.isChecked});
 }

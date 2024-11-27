@@ -39,8 +39,8 @@ class SignUpBottomWidget extends StatelessWidget {
                                 region: state.region!,
                                 city: state.city!,
                                 school: state.school!,
-                                subject: state.subject!,
-                                grade: state.grade!,
+                                subjects: state.subjects!,
+                                grades: state.grades!,
                                 password: state.password!,
                               ),
                             ));

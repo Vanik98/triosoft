@@ -11,8 +11,8 @@ class AddUserRequest {
   String region;
   String city;
   String school;
-  String subject;
-  String grade;
+  List<String>? subjects;
+  List<String>? grades;
   String password;
 
   AddUserRequest({
@@ -23,8 +23,8 @@ class AddUserRequest {
     required this.region,
     required this.city,
     required this.school,
-    required this.subject,
-    required this.grade,
+    required this.subjects,
+    required this.grades,
     required this.password,
   });
 

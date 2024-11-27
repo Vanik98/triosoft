@@ -8,8 +8,8 @@ class SignUpState {
   String? region;
   String? city;
   String? school;
-  String? subject;
-  String? grade;
+  List<String>? subjects;
+  List<String>? grades;
   String? password;
   String? confirmPassword;
 
@@ -21,8 +21,8 @@ class SignUpState {
     this.region,
     this.city,
     this.school,
-    this.subject,
-    this.grade,
+    this.subjects,
+    this.grades,
     this.password,
     this.confirmPassword,
   });
@@ -37,8 +37,8 @@ class SignUpState {
     String? region,
     String? city,
     String? school,
-    String? subject,
-    String? grade,
+    List<String>? subjects,
+    List<String>? grades,
     String? password,
     String? confirmPassword,
   }) {
@@ -50,8 +50,8 @@ class SignUpState {
       region: region ?? this.region,
       city: city ?? this.city,
       school: school ?? this.school,
-      subject: subject ?? this.subject,
-      grade: grade ?? this.grade,
+      subjects: subjects ?? this.subjects,
+      grades: grades ?? this.grades,
       password: password ?? this.password,
       confirmPassword: confirmPassword ?? this.confirmPassword,
     );

@@ -15,8 +15,11 @@ AddUserRequest _$AddUserRequestFromJson(Map<String, dynamic> json) =>
       region: json['region'] as String,
       city: json['city'] as String,
       school: json['school'] as String,
-      subject: json['subject'] as String,
-      grade: json['grade'] as String,
+      subjects: (json['subjects'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      grades:
+          (json['grades'] as List<dynamic>?)?.map((e) => e as String).toList(),
       password: json['password'] as String,
     );
 
@@ -29,7 +32,7 @@ Map<String, dynamic> _$AddUserRequestToJson(AddUserRequest instance) =>
       'region': instance.region,
       'city': instance.city,
       'school': instance.school,
-      'subject': instance.subject,
-      'grade': instance.grade,
+      'subjects': instance.subjects,
+      'grades': instance.grades,
       'password': instance.password,
     };

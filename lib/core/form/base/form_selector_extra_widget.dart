@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
 
+import '../../widgets/check_box_widget.dart';
 import '../../widgets/search_widget.dart';
 import 'form_element_wrapper.dart';
 
 class FormElementExtraWidget<T> extends StatelessWidget {
   const FormElementExtraWidget({
     super.key,
-    required this.element,
+    required this.elements,
     required this.onSelected,
     required this.onSearchChanged,
     required this.scrollController,
+    this.onChoose,
   });
 
-  final List<FormElement> element;
-  final Function(T data) onSelected;
+  final List<FormElement<T>> elements;
+  final Function(FormElement<T> element) onSelected;
+  final Function(List<FormElement<T>> data)? onChoose;
   final ValueChanged<String>? onSearchChanged;
   final ScrollController scrollController;
 
@@ -45,11 +48,11 @@ class FormElementExtraWidget<T> extends StatelessWidget {
                 child: ListView.builder(
                   controller: scrollController,
                   shrinkWrap: true,
-                  itemCount: element.length,
+                  itemCount: elements.length,
                   itemBuilder: (context, index) {
                     return GestureDetector(
                       onTap: () {
-                        onSelected(element[index].data);
+                        if (elements[index].isChecked == null) onSelected(elements[index]);
                       },
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 4.0),
@@ -59,8 +62,33 @@ class FormElementExtraWidget<T> extends StatelessWidget {
                             borderRadius: BorderRadius.circular(4),
                           ),
                           padding: const EdgeInsets.all(10.0),
-                          child: Text(
-                            element[index].title,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                elements[index].title,
+                              ),
+                              if (elements[index].isChecked != null)
+                                CheckBoxWidget(
+                                  initialValue: elements[index].isChecked!,
+                                  onChanged: (bool value) {
+                                    List<FormElement<T>> chosenElements = [];
+                                    for (var i = 0; i < elements.length; i++) {
+                                      if (elements[i].isChecked == true) {
+                                        if (i != index) {
+                                          chosenElements.add(elements[i]);
+                                        }
+                                      }
+                                    }
+                                    if (elements[index].isChecked == false) {
+                                      chosenElements.add(elements[index]..isChecked = true);
+                                    }else{
+                                      elements[index].isChecked = false;
+                                    }
+                                    if (onChoose != null) onChoose!(chosenElements);
+                                  },
+                                )
+                            ],
                           ),
                         ),
                       ),
