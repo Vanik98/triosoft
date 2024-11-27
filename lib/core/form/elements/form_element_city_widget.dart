@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:triosoft/generated/locale_keys.g.dart';
 
 import '../base/form_element_selector_full_widget.dart';
 import '../base/form_element_wrapper.dart';
@@ -32,7 +34,7 @@ class FormElementCityWidget extends StatelessWidget {
               onDateSelected(v);
             },
             formElements: _createFormElements(state.filteredTextList),
-            labelText: 'City',
+            labelText: LocaleKeys.city_village.tr(),
             isHaveSearch: true,
             scrollController: scrollController,
           );

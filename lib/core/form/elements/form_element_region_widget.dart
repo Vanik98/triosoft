@@ -1,4 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:triosoft/generated/locale_keys.g.dart';
 
 import '../base/form_element_selector_full_widget.dart';
 import '../base/form_element_wrapper.dart';
@@ -22,7 +24,7 @@ class FormElementRegionWidget extends StatelessWidget {
         onDateSelected(v);
       },
       formElements: _createFormElements(),
-      labelText: 'region',
+      labelText: LocaleKeys.region.tr(),
       scrollController: scrollController,
     );
   }
