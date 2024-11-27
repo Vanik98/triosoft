@@ -1,4 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:triosoft/generated/locale_keys.g.dart';
 
 import '../base/form_text.dart';
 
@@ -41,16 +43,16 @@ class _FormElementEmailWidgetState extends State<FormElementEmailWidget> {
     return FormText(
       hintText: '',
       controller: textEditingController,
-      labelText: widget.labelText ?? 'Email',
+      labelText: widget.labelText ?? LocaleKeys.email.tr(),
       onTextChanged: widget.onTextChanged,
       onFocusChanged: widget.onFocusChanged,
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return 'error';
+          return LocaleKeys.error.tr();
         }
         RegExp regex = RegExp(_emailRegex);
         if (!regex.hasMatch(value)) {
-          return 'error';
+          return LocaleKeys.error.tr();
         }
         return null;
       },

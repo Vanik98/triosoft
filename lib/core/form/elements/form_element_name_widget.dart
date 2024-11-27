@@ -1,4 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:triosoft/generated/locale_keys.g.dart';
 
 import '../base/form_text.dart';
 
@@ -42,12 +44,12 @@ class _FormElementNameWidgetState extends State<FormElementNameWidget> {
     return FormText(
       hintText: '',
       controller: textEditingController,
-      labelText: widget.labelText ?? 'name',
+      labelText: widget.labelText ?? LocaleKeys.name.tr(),
       onTextChanged: widget.onTextChanged,
       onFocusChanged: widget.onFocusChanged,
       validator: (value) {
         if (value.length < 3) {
-          return 'error';
+          return LocaleKeys.error.tr();
         }
         return null;
       },

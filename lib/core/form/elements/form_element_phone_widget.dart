@@ -1,4 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:triosoft/generated/locale_keys.g.dart';
 
 import '../base/form_text.dart';
 
@@ -47,19 +49,19 @@ class _FormElementPhoneWidgetState extends State<FormElementPhoneWidget> {
   @override
   Widget build(BuildContext context) {
     return FormText(
-      hintText: 'number',
+      hintText: LocaleKeys.number.tr(),
       controller: textEditingController,
-      labelText: widget.labelText ?? 'number',
+      labelText: widget.labelText ?? LocaleKeys.number.tr(),
       onTextChanged: widget.onTextChanged,
       onFocusChanged: widget.onFocusChanged,
       textInputType: const TextInputType.numberWithOptions(signed: true),
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return 'error';
+          return LocaleKeys.error.tr();
         }
         RegExp regex = RegExp(phoneNumberRegex);
         if (!regex.hasMatch(value)) {
-          return 'error';
+          return LocaleKeys.error.tr();
         }
         return null;
       },

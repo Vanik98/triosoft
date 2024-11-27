@@ -1,15 +1,24 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:triosoft/core/form/elements/form_element_city_widget.dart';
 import 'package:triosoft/core/form/elements/form_element_grade_widget.dart';
+import 'package:triosoft/core/form/elements/form_element_school_widget.dart';
+import 'package:triosoft/core/form/elements/form_element_subject_widget.dart';
+import 'package:triosoft/features/authorization/domain/entites/school_enum.dart';
+import 'package:triosoft/features/authorization/domain/entites/subject_enum.dart';
 import 'package:triosoft/features/authorization/presentation/bloc/sign_up_bloc/sign_up_bloc.dart';
 import 'package:triosoft/features/authorization/presentation/bloc/sign_up_bloc/sign_up_event.dart';
+import 'package:triosoft/generated/locale_keys.g.dart';
 
 import '../../../../core/form/elements/form_element_email_widget.dart';
 import '../../../../core/form/elements/form_element_name_widget.dart';
 import '../../../../core/form/elements/form_element_password_widget.dart';
 import '../../../../core/form/elements/form_element_phone_widget.dart';
 import '../../../../core/form/elements/form_element_region_widget.dart';
+import '../../domain/entites/city_enum.dart';
+import '../../domain/entites/grade_enum.dart';
+import '../../domain/entites/region_enum.dart';
 
 class SignUpPageFormElementsWidget extends StatelessWidget {
   const SignUpPageFormElementsWidget({super.key});
@@ -23,6 +32,7 @@ class SignUpPageFormElementsWidget extends StatelessWidget {
         _phoneNumberWidget,
         _regionWidget,
         _cityWidget,
+        _schoolWidget,
         _gradeWidget,
         _subjectWidget,
         _passwordWidget,
@@ -50,7 +60,7 @@ class SignUpPageFormElementsWidget extends StatelessWidget {
                           context.read<SignUpBloc>().add(SignUpEvent.changeName(value));
                         },
                         initialValue: name,
-                        labelText: 'Name',
+                        labelText: LocaleKeys.name.tr(),
                       );
                     },
                   ))),
@@ -68,7 +78,7 @@ class SignUpPageFormElementsWidget extends StatelessWidget {
                     onTextChanged: (value) {
                       context.read<SignUpBloc>().add(SignUpEvent.changeLastName(value));
                     },
-                    labelText: 'Last Name',
+                    labelText: LocaleKeys.last_name.tr(),
                   );
                 },
               ),
@@ -93,21 +103,27 @@ class SignUpPageFormElementsWidget extends StatelessWidget {
 
   Widget get _phoneNumberWidget => _getWidgetWithBottomPadding(BlocSelector<SignUpBloc, SignUpState, String?>(
         selector: (state) {
-          return state.email;
+          return state.phoneNumber;
         },
         builder: (context, email) {
-          return FormElementPhoneWidget();
+          return FormElementPhoneWidget(
+            onTextChanged: (value) {
+              context.read<SignUpBloc>().add(SignUpEvent.changePhoneNumber(value));
+            },
+          );
         },
       ));
 
   Widget get _regionWidget => _getWidgetWithBottomPadding(BlocSelector<SignUpBloc, SignUpState, String?>(
         selector: (state) {
-          return state.email;
+          return state.region;
         },
-        builder: (context, state) {
+        builder: (context, region) {
           return FormElementRegionWidget(
-            values: ['asdas', 'asdsad'],
-            onDateSelected: (String) {},
+            values: regionNames,
+            onDateSelected: (value) {
+              context.read<SignUpBloc>().add(SignUpEvent.changeRegion(value));
+            },
           );
         },
       ));
@@ -116,55 +132,81 @@ class SignUpPageFormElementsWidget extends StatelessWidget {
         selector: (state) {
           return state.city;
         },
-        builder: (context, state) {
+        builder: (context, city) {
           return FormElementCityWidget(
-            values: ['asdas', 'asdsad'],
+            values: cityNames,
             onDateSelected: (value) {
-
+              context.read<SignUpBloc>().add(SignUpEvent.changeCity(value));
             },
           );
         },
       ));
 
+  Widget get _schoolWidget => _getWidgetWithBottomPadding(BlocSelector<SignUpBloc, SignUpState, String?>(
+    selector: (state) {
+      return state.city;
+    },
+    builder: (context, city) {
+      return FormElementSchoolWidget(
+        values: schoolNames,
+        onDateSelected: (value) {
+          context.read<SignUpBloc>().add(SignUpEvent.changeCity(value));
+        },
+      );
+    },
+  ));
+
   Widget get _gradeWidget => _getWidgetWithBottomPadding(BlocSelector<SignUpBloc, SignUpState, String?>(
         selector: (state) {
-          return state.email;
+          return state.grade;
         },
-        builder: (context, state) {
+        builder: (context, grade) {
           return FormElementGradeWidget(
-            values: ['asdas', 'asdsad'],
-            onDateSelected: (String) {},
+            values: gradeNames,
+            onDateSelected: (value) {
+              context.read<SignUpBloc>().add(SignUpEvent.changeGrade(value));
+            },
           );
         },
       ));
 
   Widget get _subjectWidget => _getWidgetWithBottomPadding(BlocSelector<SignUpBloc, SignUpState, String?>(
         selector: (state) {
-          return state.email;
+          return state.subject;
         },
-        builder: (context, state) {
-          return FormElementRegionWidget(
-            values: ['asdas', 'asdsad'],
-            onDateSelected: (String) {},
+        builder: (context, subject) {
+          return FormElementSubjectWidget(
+            values: subjectNames,
+            onDateSelected: (value) {
+              context.read<SignUpBloc>().add(SignUpEvent.changeSubject(value));
+            },
           );
         },
       ));
 
   Widget get _passwordWidget => _getWidgetWithBottomPadding(BlocSelector<SignUpBloc, SignUpState, String?>(
         selector: (state) {
-          return state.email;
+          return state.password;
         },
         builder: (context, state) {
-          return FormElementPasswordWidget();
+          return FormElementPasswordWidget(
+            onTextChanged: (value) {
+              context.read<SignUpBloc>().add(SignUpEvent.changePassword(value));
+            },
+          );
         },
       ));
 
   Widget get _confirmWidget => _getWidgetWithBottomPadding(BlocSelector<SignUpBloc, SignUpState, String?>(
         selector: (state) {
-          return state.email;
+          return state.confirmPassword;
         },
         builder: (context, state) {
-          return FormElementPasswordWidget();
+          return FormElementPasswordWidget(
+            onTextChanged: (value) {
+              context.read<SignUpBloc>().add(SignUpEvent.changePassword(value));
+            },
+          );
         },
       ));
 }

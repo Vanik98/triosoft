@@ -4,6 +4,7 @@ abstract class  LocaleKeys {
   static const sign_up = 'sign_up';
   static const quick_easy = 'quick_easy';
   static const name = 'name';
+  static const last_name = 'last_name';
   static const email = 'email';
   static const number = 'number';
   static const region = 'region';
