@@ -22,7 +22,7 @@ class TrioSoftApp extends StatelessWidget {
         fallbackLocale: EasyLocalizationConfig.fallbackLocale,
         startLocale: EasyLocalizationConfig.startLocale,
         child: BlocProvider(
-          create: (context) => LoginBloc(locator.get(), locator.get(), locator.get(), locator.get())..add(const LoginEvent.getToken()),
+          create: (context) => LoginBloc(locator.get(), locator.get(), locator.get(), locator.get()),
           child: CoreAppWidget(
             appRouter: GoRouter(
               routes: [
